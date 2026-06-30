@@ -422,9 +422,13 @@ function loadCalEmbed(){
 
   Cal("init", { origin: "https://app.cal.com" });
 
+  const nameVal = auditForm.querySelector('[name="name"]')?.value || '';
+  const emailVal = auditForm.querySelector('[name="email"]')?.value || '';
+  const calLinkWithPrefill = `https://cal.com/tazul-oriflows/free-audit?name=${encodeURIComponent(nameVal)}&email=${encodeURIComponent(emailVal)}`;
+
   Cal("inline", {
     elementOrSelector: "#cal-embed",
-    calLink: "https://cal.com/tazul-oriflows/free-audit",
+    calLink: calLinkWithPrefill,
     config: {
       theme: "dark",
       layout: "month_view"
