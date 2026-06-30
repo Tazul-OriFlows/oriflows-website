@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OriFlows — Stop Losing Patients to Missed Calls | UK Dental Automation</title>
+<meta name="description" content="OriFlows builds missed-call text-back, no-show reduction, and AI front-desk automation for UK private dental practices. Free revenue audit.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0A0E1A;
+    --surface:#0F1729;
+    --surface-2:#141D33;
+    --border:#1E293B;
+    --text:#F8FAFC;
+    --muted:#94A3B8;
+    --muted-2:#64748B;
+    --blue:#2563EB;
+    --blue-light:#38BDF8;
+    --green:#10B981;
+    --amber:#F59E0B;
+    --red:#EF4444;
+    --grad: linear-gradient(135deg, var(--blue) 0%, var(--blue-light) 100%);
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+
+  h1,h2,h3,h4{
+    font-family:'Space Grotesk',sans-serif;
+    line-height:1.15;
+    letter-spacing:-0.01em;
+  }
+
+  .mono{
+    font-family:'JetBrains Mono',monospace;
+  }
+
+  a{color:inherit;text-decoration:none;}
+
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+  }
+
+  /* ===== NAV ===== */
+  nav{
+    position:fixed;
+    top:0;left:0;right:0;
+    z-index:100;
+    background:rgba(10,14,26,0.85);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border);
+  }
+  .nav-inner{
+    max-width:1180px;
+    margin:0 auto;
+    padding:16px 24px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .logo{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    font-size:1.25rem;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .logo-dot{
+    width:8px;height:8px;border-radius:50%;
+    background:var(--green);
+    box-shadow:0 0 0 0 rgba(16,185,129,0.6);
+    animation:pulse 2s infinite;
+  }
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(16,185,129,0.5);}
+    70%{box-shadow:0 0 0 6px rgba(16,185,129,0);}
+    100%{box-shadow:0 0 0 0 rgba(16,185,129,0);}
+  }
+  .nav-links{
+    display:flex;
+    gap:32px;
+    font-size:0.9rem;
+    color:var(--muted);
+  }
+  .nav-links a:hover{color:var(--text);}
+  .nav-cta{
+    background:var(--grad);
+    color:#fff;
+    padding:10px 20px;
+    border-radius:8px;
+    font-weight:600;
+    font-size:0.88rem;
+  }
+  .nav-mobile-hide{display:flex;}
+  @media (max-width:760px){
+    .nav-mobile-hide{display:none;}
+  }
+
+  /* ===== HERO ===== */
+  .hero{
+    padding:160px 0 100px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:'';
+    position:absolute;
+    top:-200px;left:50%;
+    transform:translateX(-50%);
+    width:900px;height:600px;
+    background:radial-gradient(circle, rgba(37,99,235,0.18) 0%, transparent 70%);
+    pointer-events:none;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:64px;
+    align-items:center;
+    position:relative;
+    z-index:1;
+  }
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr; gap:48px;}
+    .hero{padding:130px 0 60px;}
+  }
+
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--surface);
+    border:1px solid var(--border);
+    padding:6px 14px;
+    border-radius:100px;
+    font-size:0.78rem;
+    color:var(--blue-light);
+    font-family:'JetBrains Mono',monospace;
+    margin-bottom:24px;
+  }
+
+  .hero h1{
+    font-size:clamp(2.1rem, 4.6vw, 3.4rem);
+    font-weight:700;
+    margin-bottom:22px;
+  }
+  .hero h1 .accent{
+    background:var(--grad);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+
+  .hero p.sub{
+    font-size:1.13rem;
+    color:var(--muted);
+    max-width:540px;
+    margin-bottom:32px;
+  }
+
+  .hero-ctas{
+    display:flex;
+    gap:14px;
+    margin-bottom:36px;
+    flex-wrap:wrap;
+  }
+  .btn-primary{
+    background:var(--grad);
+    color:#fff;
+    padding:15px 28px;
+    border-radius:10px;
+    font-weight:600;
+    font-size:0.96rem;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    box-shadow:0 8px 24px -8px rgba(37,99,235,0.5);
+    transition:transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 12px 28px -8px rgba(37,99,235,0.6);}
+  .btn-secondary{
+    background:transparent;
+    color:var(--text);
+    padding:15px 28px;
+    border-radius:10px;
+    font-weight:600;
+    font-size:0.96rem;
+    border:1px solid var(--border);
+    transition:border-color 0.15s ease, background 0.15s ease;
+  }
+  .btn-secondary:hover{border-color:var(--blue-light); background:var(--surface);}
+
+  .hero-microcopy{
+    font-size:0.82rem;
+    color:var(--muted-2);
+  }
+
+  /* ===== HERO DEMO (signature element) ===== */
+  .demo-card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:0;
+    overflow:hidden;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,0.5);
+  }
+  .demo-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 18px;
+    border-bottom:1px solid var(--border);
+    background:var(--surface-2);
+  }
+  .demo-header-left{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:0.8rem;
+    color:var(--muted);
+    font-family:'JetBrains Mono',monospace;
+  }
+  .demo-dots{display:flex; gap:5px;}
+  .demo-dots span{width:8px;height:8px;border-radius:50%;background:var(--border);}
+  .demo-body{
+    padding:20px;
+    min-height:340px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .demo-event{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    opacity:0;
+    animation:fadeUp 0.5s ease forwards;
+  }
+  @keyframes fadeUp{
+    from{opacity:0; transform:translateY(8px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+  .demo-icon{
+    width:30px;height:30px;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    font-size:0.85rem;
+    margin-top:2px;
+  }
+  .demo-icon.missed{background:rgba(239,68,68,0.15); color:var(--red);}
+  .demo-icon.sent{background:rgba(37,99,235,0.15); color:var(--blue-light);}
+  .demo-icon.reply{background:rgba(16,185,129,0.15); color:var(--green);}
+  .demo-icon.booked{background:rgba(245,158,11,0.15); color:var(--amber);}
+  .demo-text{font-size:0.86rem;}
+  .demo-text .label{font-weight:600; display:block; margin-bottom:2px;}
+  .demo-text .meta{color:var(--muted-2); font-size:0.76rem; font-family:'JetBrains Mono',monospace;}
+  .demo-bubble{
+    background:var(--surface-2);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:10px 13px;
+    font-size:0.82rem;
+    color:var(--muted);
+    margin-top:6px;
+    max-width:88%;
+  }
+  .demo-footer{
+    border-top:1px solid var(--border);
+    padding:14px 18px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:var(--surface-2);
+  }
+  .demo-footer .stat{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.78rem;
+    color:var(--green);
+  }
+  .demo-restart{
+    font-size:0.75rem;
+    color:var(--muted-2);
+    cursor:pointer;
+    border:1px solid var(--border);
+    padding:5px 10px;
+    border-radius:6px;
+  }
+  .demo-restart:hover{color:var(--text); border-color:var(--muted-2);}
+
+  /* ===== SECTION SHARED ===== */
+  section{
+    padding:90px 0;
+    position:relative;
+  }
+  .section-tag{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.78rem;
+    color:var(--blue-light);
+    margin-bottom:14px;
+    display:block;
+  }
+  .section-head{
+    max-width:680px;
+    margin-bottom:56px;
+  }
+  .section-head h2{
+    font-size:clamp(1.7rem, 3vw, 2.4rem);
+    margin-bottom:16px;
+  }
+  .section-head p{
+    color:var(--muted);
+    font-size:1.05rem;
+  }
+  .divider{
+    height:1px;
+    background:var(--border);
+    border:none;
+  }
+
+  /* ===== PROBLEM SECTION ===== */
+  .problem{
+    background:var(--surface);
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+  }
+  .problem-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:var(--border);
+    border:1px solid var(--border);
+    border-radius:14px;
+    overflow:hidden;
+  }
+  @media (max-width:760px){
+    .problem-grid{grid-template-columns:1fr;}
+  }
+  .problem-cell{
+    background:var(--bg);
+    padding:32px 28px;
+  }
+  .problem-cell .big-stat{
+    font-family:'JetBrains Mono',monospace;
+    font-size:2.4rem;
+    font-weight:600;
+    color:var(--red);
+    margin-bottom:10px;
+    display:block;
+  }
+  .problem-cell h4{
+    font-size:1.02rem;
+    margin-bottom:8px;
+    font-weight:600;
+  }
+  .problem-cell p{
+    color:var(--muted);
+    font-size:0.92rem;
+  }
+  .problem-cell .src{
+    display:block;
+    margin-top:12px;
+    font-size:0.72rem;
+    color:var(--muted-2);
+    font-family:'JetBrains Mono',monospace;
+  }
+
+  .pain-mirror{
+    margin-top:48px;
+    background:var(--bg);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:32px;
+  }
+  .pain-mirror h4{
+    font-size:1.1rem;
+    margin-bottom:18px;
+    color:var(--text);
+  }
+  .pain-list{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px 28px;
+  }
+  @media (max-width:700px){ .pain-list{grid-template-columns:1fr;} }
+  .pain-item{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+    font-size:0.93rem;
+    color:var(--muted);
+  }
+  .pain-item .x{
+    color:var(--red);
+    font-family:'JetBrains Mono',monospace;
+    flex-shrink:0;
+  }
+
+  /* ===== SERVICES ===== */
+  .services-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+  }
+  @media (max-width:900px){ .services-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:620px){ .services-grid{grid-template-columns:1fr;} }
+
+  .service-card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:30px 26px;
+    transition:border-color 0.2s ease, transform 0.2s ease;
+    position:relative;
+  }
+  .service-card:hover{
+    border-color:var(--blue);
+    transform:translateY(-3px);
+  }
+  .service-card.featured{
+    border-color:var(--blue);
+    background:linear-gradient(160deg, rgba(37,99,235,0.1), var(--surface) 60%);
+  }
+  .service-card .tag-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    margin-bottom:18px;
+  }
+  .service-icon{
+    width:42px;height:42px;
+    border-radius:10px;
+    background:var(--surface-2);
+    border:1px solid var(--border);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.2rem;
+  }
+  .service-card.featured .service-icon{
+    background:var(--grad);
+    border:none;
+  }
+  .new-badge{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.68rem;
+    background:rgba(16,185,129,0.15);
+    color:var(--green);
+    padding:4px 9px;
+    border-radius:6px;
+    height:fit-content;
+  }
+  .service-card h3{
+    font-size:1.15rem;
+    margin-bottom:10px;
+  }
+  .service-card p{
+    color:var(--muted);
+    font-size:0.92rem;
+    margin-bottom:18px;
+  }
+  .result-line{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:0.85rem;
+    color:var(--green);
+    font-weight:600;
+    padding-top:14px;
+    border-top:1px solid var(--border);
+  }
+  .result-line .arrow{font-family:'JetBrains Mono',monospace;}
+
+  /* ===== PROOF SECTION ===== */
+  .proof{
+    background:var(--surface);
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+  }
+  .proof-banner{
+    background:var(--bg);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:24px 28px;
+    margin-bottom:40px;
+    display:flex;
+    align-items:center;
+    gap:16px;
+  }
+  .proof-banner .dot{
+    width:10px;height:10px;border-radius:50%;
+    background:var(--amber);
+    flex-shrink:0;
+    box-shadow:0 0 0 0 rgba(245,158,11,0.5);
+    animation:pulse2 2s infinite;
+  }
+  @keyframes pulse2{
+    0%{box-shadow:0 0 0 0 rgba(245,158,11,0.5);}
+    70%{box-shadow:0 0 0 6px rgba(245,158,11,0);}
+    100%{box-shadow:0 0 0 0 rgba(245,158,11,0);}
+  }
+  .proof-banner p{font-size:0.93rem; color:var(--muted); margin:0;}
+  .proof-banner strong{color:var(--text);}
+
+  .case-card{
+    background:var(--bg);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:32px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:32px;
+  }
+  @media (max-width:760px){ .case-card{grid-template-columns:1fr;} }
+  .case-meta{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .case-meta .clinic{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:600;
+    font-size:1.05rem;
+  }
+  .case-meta .loc{
+    color:var(--muted-2);
+    font-size:0.85rem;
+    font-family:'JetBrains Mono',monospace;
+  }
+  .case-meta p{
+    color:var(--muted);
+    font-size:0.92rem;
+  }
+  .case-stats{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+  }
+  .case-stat{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:18px;
+  }
+  .case-stat .num{
+    font-family:'JetBrains Mono',monospace;
+    font-size:1.6rem;
+    font-weight:600;
+    color:var(--blue-light);
+    display:block;
+  }
+  .case-stat .lbl{
+    font-size:0.78rem;
+    color:var(--muted);
+    margin-top:4px;
+  }
+
+  /* ===== PROCESS ===== */
+  .process-list{
+    display:flex;
+    flex-direction:column;
+  }
+  .process-item{
+    display:grid;
+    grid-template-columns:80px 1fr;
+    gap:24px;
+    padding:28px 0;
+    border-bottom:1px solid var(--border);
+  }
+  .process-item:first-child{border-top:1px solid var(--border);}
+  .process-num{
+    font-family:'JetBrains Mono',monospace;
+    color:var(--blue-light);
+    font-size:0.95rem;
+  }
+  .process-item h4{font-size:1.1rem; margin-bottom:8px;}
+  .process-item p{color:var(--muted); font-size:0.92rem; max-width:560px;}
+  .process-item .when{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.75rem;
+    color:var(--muted-2);
+    margin-top:8px;
+    display:block;
+  }
+
+  /* ===== FAQ ===== */
+  .faq-item{
+    border-bottom:1px solid var(--border);
+    padding:22px 0;
+  }
+  .faq-q{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    cursor:pointer;
+    font-weight:600;
+    font-size:1rem;
+  }
+  .faq-q .plus{
+    font-family:'JetBrains Mono',monospace;
+    color:var(--blue-light);
+    transition:transform 0.2s ease;
+    font-size:1.2rem;
+  }
+  .faq-item.open .plus{transform:rotate(45deg);}
+  .faq-a{
+    color:var(--muted);
+    font-size:0.92rem;
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.25s ease;
+  }
+  .faq-a-inner{padding-top:14px;}
+  .faq-item.open .faq-a{max-height:300px;}
+
+  /* ===== FINAL CTA ===== */
+  .final-cta{
+    background:linear-gradient(160deg, var(--surface), var(--bg));
+    border-top:1px solid var(--border);
+    text-align:center;
+  }
+  .final-cta h2{
+    font-size:clamp(1.8rem,3.6vw,2.6rem);
+    margin-bottom:18px;
+  }
+  .final-cta p{
+    color:var(--muted);
+    max-width:520px;
+    margin:0 auto 32px;
+    font-size:1.05rem;
+  }
+
+  /* ===== FOOTER ===== */
+  footer{
+    border-top:1px solid var(--border);
+    padding:48px 0 28px;
+  }
+  .footer-grid{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:24px;
+    margin-bottom:32px;
+  }
+  .footer-brand .logo{margin-bottom:10px;}
+  .footer-brand p{color:var(--muted-2); font-size:0.85rem; max-width:280px;}
+  .footer-links{
+    display:flex;
+    gap:48px;
+    flex-wrap:wrap;
+  }
+  .footer-col h5{
+    font-size:0.78rem;
+    color:var(--muted-2);
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    margin-bottom:14px;
+    font-family:'JetBrains Mono',monospace;
+  }
+  .footer-col a{
+    display:block;
+    color:var(--muted);
+    font-size:0.88rem;
+    margin-bottom:10px;
+  }
+  .footer-col a:hover{color:var(--text);}
+  .footer-bottom{
+    display:flex;
+    justify-content:space-between;
+    color:var(--muted-2);
+    font-size:0.8rem;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+
+  /* ===== reveal on scroll ===== */
+  .reveal{
+    opacity:0;
+    transform:translateY(16px);
+    transition:opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible{
+    opacity:1;
+    transform:translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="logo"><span class="logo-dot"></span>OriFlows</div>
+    <div class="nav-links nav-mobile-hide">
+      <a href="#problem">The Problem</a>
+      <a href="#services">Services</a>
+      <a href="#proof">Results</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a href="book.html" class="nav-cta">Book Free Audit</a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">● LIVE — built for UK private dental practices</div>
+      <h1>Your front desk can't answer every call.<br><span class="accent">Your automation never misses one.</span></h1>
+      <p class="sub">Every unanswered call at your practice is a patient calling the clinic down the road instead. OriFlows installs the missed-call text-back, no-show reminders, and AI front desk that catches them — running quietly in the background, on the systems you already use.</p>
+      <div class="hero-ctas">
+        <a href="book.html" class="btn-primary">Get my free revenue audit →</a>
+        <a href="#proof" class="btn-secondary">See real numbers</a>
+      </div>
+      <p class="hero-microcopy">No contract lock-in · Live in 7–14 days · Built for your exact practice</p>
+    </div>
+
+    <div class="demo-card" id="demoCard">
+      <div class="demo-header">
+        <div class="demo-header-left">
+          <span style="width:7px;height:7px;border-radius:50%;background:var(--green);display:inline-block;"></span>
+          oriflows-automation · live simulation
+        </div>
+        <div class="demo-dots"><span></span><span></span><span></span></div>
+      </div>
+      <div class="demo-body" id="demoBody"></div>
+      <div class="demo-footer">
+        <span class="stat" id="demoStat">⏱ response time: —</span>
+        <span class="demo-restart" id="demoRestart">↻ replay</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== PROBLEM ===== -->
+<section class="problem" id="problem">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-tag">// THE REALITY</span>
+      <h2>This is what's happening at your practice right now — whether you've measured it or not</h2>
+      <p>These aren't OriFlows numbers. They're industry-wide findings from dental phone-system and practice-management research. Your exact figure depends on your call volume, but the pattern is consistent across UK and international practices.</p>
+    </div>
+
+    <div class="problem-grid reveal">
+      <div class="problem-cell">
+        <span class="big-stat">20–35%</span>
+        <h4>of inbound calls go unanswered</h4>
+        <p>During lunch, peak Monday mornings, and after-hours — exactly when patients are trying to book.</p>
+        <span class="src">SOURCE: PRACTICE PHONE-SYSTEM STUDIES, 2025</span>
+      </div>
+      <div class="problem-cell">
+        <span class="big-stat">~80%</span>
+        <h4>of missed calls are booking requests</h4>
+        <p>Not general enquiries. Patients ready to put money in your diary — going straight to voicemail.</p>
+        <span class="src">SOURCE: DENTAL CALL-HANDLING RESEARCH</span>
+      </div>
+      <div class="problem-cell">
+        <span class="big-stat">75%</span>
+        <h4>never call back</h4>
+        <p>They call the next practice on Google instead. You don't lose a booking — you lose the patient, permanently.</p>
+        <span class="src">SOURCE: DENTAL PHONE ANALYTICS, 2025</span>
+      </div>
+    </div>
+
+    <div class="pain-mirror reveal">
+      <h4>Sound familiar?</h4>
+      <div class="pain-list">
+        <div class="pain-item"><span class="x">×</span> Your receptionist is checking a patient in when the phone rings, and there's nobody to catch it.</div>
+        <div class="pain-item"><span class="x">×</span> You're paying for Google Ads to make the phone ring — then losing the call anyway.</div>
+        <div class="pain-item"><span class="x">×</span> No-shows leave a chair empty and a hygienist or associate paid for nothing.</div>
+        <div class="pain-item"><span class="x">×</span> Treatment plans get accepted verbally, then never followed up, then forgotten.</div>
+        <div class="pain-item"><span class="x">×</span> Recalls are done manually — or not at all — so patients quietly lapse to other practices.</div>
+        <div class="pain-item"><span class="x">×</span> You genuinely don't know your missed-call rate. Most owners don't, until it's tracked.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-tag">// WHAT GETS BUILT</span>
+      <h2>Four systems. One job: stop patients slipping through the cracks.</h2>
+      <p>Each one runs quietly in the background on infrastructure built specifically for your practice — fully managed, monitored, and explained in plain terms. Nothing is a black box.</p>
+    </div>
+
+    <div class="services-grid reveal">
+      <div class="service-card">
+        <div class="tag-row">
+          <div class="service-icon">📞</div>
+        </div>
+        <h3>Missed-Call Text-Back</h3>
+        <p>Any unanswered call triggers an instant SMS — so the patient is talking to your booking link within seconds, not searching for your competitor.</p>
+        <div class="result-line"><span class="arrow">→</span> Recovers bookings you're currently losing in silence</div>
+      </div>
+
+      <div class="service-card">
+        <div class="tag-row">
+          <div class="service-icon">🗓️</div>
+        </div>
+        <h3>No-Show & Reminder System</h3>
+        <p>Multi-step SMS + email reminders before every appointment, with one-tap confirm or reschedule — so empty chairs become the exception, not the norm.</p>
+        <div class="result-line"><span class="arrow">→</span> Protects chair-time revenue you've already scheduled</div>
+      </div>
+
+      <div class="service-card">
+        <div class="tag-row">
+          <div class="service-icon">🔁</div>
+        </div>
+        <h3>Lead & Recall Follow-Up</h3>
+        <p>New enquiries and overdue recalls get automatic, personalised follow-up sequences until they book — without anyone on your team chasing a spreadsheet.</p>
+        <div class="result-line"><span class="arrow">→</span> Turns one-time enquiries into recurring patients</div>
+      </div>
+
+      <div class="service-card featured">
+        <div class="tag-row">
+          <div class="service-icon">🤖</div>
+          <span class="new-badge">VOICE AI</span>
+        </div>
+        <h3>AI Front Desk (Voice + Chat)</h3>
+        <p>An AI receptionist answers after-hours and overflow calls, checks availability, and books directly into your calendar — sounding like a person, not a phone tree.</p>
+        <div class="result-line"><span class="arrow">→</span> Covers the calls your team physically can't reach</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROOF ===== -->
+<section class="proof" id="proof">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-tag">// PROOF, HONESTLY LABELLED</span>
+      <h2>We'd rather show you one real pilot than invent ten testimonials</h2>
+      <p>OriFlows is early — we're deliberately running a small founding cohort of UK practices before opening up. Here's what that looks like in practice, with the numbers framed exactly as they are: early and real, not polished marketing claims.</p>
+    </div>
+
+    <div class="proof-banner reveal">
+      <span class="dot"></span>
+      <p><strong>Founding Partner Programme:</strong> we're onboarding a limited number of UK private practices at reduced setup pricing in exchange for an honest case study. No fake logos, no stock testimonials — this is what's actually live.</p>
+    </div>
+
+    <div class="case-card reveal">
+      <div class="case-meta">
+        <span class="clinic">Founding Partner Pilot</span>
+        <span class="loc">PRIVATE PRACTICE · SOUTH EAST ENGLAND</span>
+        <p>A solo-dentist private practice was tracking missed calls manually for the first time. Within the first three weeks of switching on missed-call text-back and reminder automation, this is what changed.</p>
+        <p style="font-size:0.8rem;color:var(--muted-2);">Early-stage pilot data, week 3. Will be updated as the engagement continues — see our <a href="#" style="text-decoration:underline;">methodology note</a>.</p>
+      </div>
+      <div class="case-stats">
+        <div class="case-stat">
+          <span class="num">31</span>
+          <span class="lbl">missed calls auto-texted in 3 weeks</span>
+        </div>
+        <div class="case-stat">
+          <span class="num">9</span>
+          <span class="lbl">converted into booked appointments</span>
+        </div>
+        <div class="case-stat">
+          <span class="num">100%</span>
+          <span class="lbl">of appointments now get auto-reminders</span>
+        </div>
+        <div class="case-stat">
+          <span class="num">&lt;48h</span>
+          <span class="lbl">from kickoff call to system live</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROCESS ===== -->
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-tag">// HOW IT GOES LIVE</span>
+      <h2>From audit call to running system</h2>
+    </div>
+    <div class="process-list reveal">
+      <div class="process-item">
+        <span class="process-num">01</span>
+        <div>
+          <h4>Free revenue audit call</h4>
+          <p>We look at your current call handling, no-show rate, and booking flow, and tell you — with numbers — what it's likely costing you. No obligation.</p>
+          <span class="when">~20 MINUTES</span>
+        </div>
+      </div>
+      <div class="process-item">
+        <span class="process-num">02</span>
+        <div>
+          <h4>System mapped to your practice</h4>
+          <p>We connect to your existing phone number, calendar, and patient management workflow. Nothing about how patients reach you changes — what happens after does.</p>
+          <span class="when">2–5 DAYS</span>
+        </div>
+      </div>
+      <div class="process-item">
+        <span class="process-num">03</span>
+        <div>
+          <h4>Live, tested, handed over</h4>
+          <p>We test every automation against real scenarios before it touches a real patient, then walk your team through exactly what's running.</p>
+          <span class="when">DAY 7–14</span>
+        </div>
+      </div>
+      <div class="process-item">
+        <span class="process-num">04</span>
+        <div>
+          <h4>Monitored and improved</h4>
+          <p>Monthly reporting on what the system actually caught — missed calls recovered, reminders sent, no-shows prevented — so it's never a black box.</p>
+          <span class="when">ONGOING</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq">
+  <div class="wrap" style="max-width:760px;">
+    <div class="section-head reveal">
+      <span class="section-tag">// QUESTIONS</span>
+      <h2>Before you book the audit</h2>
+    </div>
+    <div class="reveal">
+      <div class="faq-item">
+        <div class="faq-q">Do I need to switch my phone system or PMS? <span class="plus">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">No. OriFlows connects to what you already use — your existing phone number and booking workflow stay the same. We add the automation layer behind it.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is this only for private practices, not NHS? <span class="plus">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">We focus specifically on private UK dental practices, where missed bookings and no-shows directly cost revenue per patient — that's where this system has the clearest, fastest payback.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What's the actual tech behind this? <span class="plus">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">A managed automation system built specifically for your practice's phone, calendar, and patient workflow. We handle the technical setup and maintenance end-to-end — you just see the results land in your calendar.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is there a contract? <span class="plus">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">No lock-in contract. You pay a one-off setup fee plus a monthly fee, and can stop at any time — we'd rather earn it monthly than trap you in a term.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How fast will I see results? <span class="plus">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Missed-call recovery starts working from day one of going live. No-show reduction and recall follow-up typically show a clear trend within 30 days.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="final-cta">
+  <div class="wrap">
+    <div class="reveal">
+      <h2>Find out what missed calls are actually costing you</h2>
+      <p>20 minutes. No obligation. You'll leave with real numbers for your practice — not industry averages.</p>
+      <a href="book.html" class="btn-primary">Book your free revenue audit →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><span class="logo-dot"></span>OriFlows</div>
+        <p>Automation infrastructure for UK private dental practices.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h5>Site</h5>
+          <a href="#problem">The Problem</a>
+          <a href="#services">Services</a>
+          <a href="#faq">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <h5>Get Started</h5>
+          <a href="book.html">Book free audit</a>
+        </div>
+      </div>
+    </div>
+    <hr class="divider" style="margin-bottom:24px;">
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> OriFlows. All rights reserved.</span>
+      <span>Built for UK private dental practices.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+},{threshold:0.12});
+reveals.forEach(el=>io.observe(el));
+
+// FAQ accordion
+document.querySelectorAll('.faq-item').forEach(item=>{
+  item.querySelector('.faq-q').addEventListener('click',()=>{
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+    if(!isOpen) item.classList.add('open');
+  });
+});
+
+// Hero demo sequence — the "missed call to booked patient" simulation
+const sequence = [
+  {icon:'missed', cls:'missed', label:'Incoming call missed', meta:'07:41 AM — front desk on another line', bubble:null},
+  {icon:'sent', cls:'sent', label:'Auto text-back sent', meta:'07:41 AM — 8 seconds later', bubble:"Sorry we missed your call! This is Riverside Dental — tap here to grab a time that works: [booking link]"},
+  {icon:'reply', cls:'reply', label:'Patient replies', meta:'07:43 AM', bubble:"Oh perfect, didn't expect a text back so fast. Do you have anything Thursday?"},
+  {icon:'booked', cls:'booked', label:'Appointment booked', meta:'07:44 AM — synced to calendar automatically', bubble:"Thursday 2:30 PM confirmed ✓ Reminder will be sent 24h before."}
+];
+
+function emoji(type){
+  return {missed:'☎', sent:'⚡', reply:'💬', booked:'✓'}[type];
+}
+
+function runDemo(){
+  const body = document.getElementById('demoBody');
+  const stat = document.getElementById('demoStat');
+  body.innerHTML = '';
+  stat.textContent = '⏱ response time: —';
+  let delay = 200;
+  sequence.forEach((step, i)=>{
+    setTimeout(()=>{
+      const row = document.createElement('div');
+      row.className = 'demo-event';
+      row.style.animationDelay = '0s';
+      row.innerHTML = `
+        <div class="demo-icon ${step.cls}">${emoji(step.icon)}</div>
+        <div class="demo-text">
+          <span class="label">${step.label}</span>
+          <span class="meta">${step.meta}</span>
+          ${step.bubble ? `<div class="demo-bubble">${step.bubble}</div>` : ''}
+        </div>`;
+      body.appendChild(row);
+      if(i === 1){ stat.textContent = '⏱ response time: 8 seconds'; }
+      if(i === sequence.length - 1){ stat.textContent = '⏱ total time to booked: 3 min'; }
+    }, delay);
+    delay += 1500;
+  });
+}
+
+runDemo();
+document.getElementById('demoRestart').addEventListener('click', runDemo);
+</script>
+
+</body>
+</html>

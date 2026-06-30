@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Call Booked | OriFlows</title>
+<meta name="description" content="Your free revenue audit call is confirmed — we'll see you then.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0A0E1A;
+    --surface:#0F1729;
+    --surface-2:#141D33;
+    --border:#1E293B;
+    --text:#F8FAFC;
+    --muted:#94A3B8;
+    --muted-2:#64748B;
+    --blue:#2563EB;
+    --blue-light:#38BDF8;
+    --green:#10B981;
+    --grad: linear-gradient(135deg, var(--blue) 0%, var(--blue-light) 100%);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+  }
+  h1,h2{font-family:'Space Grotesk',sans-serif; line-height:1.15; letter-spacing:-0.01em;}
+  a{color:inherit; text-decoration:none;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+  }
+
+  nav{
+    padding:20px 24px;
+    border-bottom:1px solid var(--border);
+  }
+  .nav-inner{max-width:1100px; margin:0 auto; display:flex; align-items:center;}
+  .logo{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.25rem; display:flex; align-items:center; gap:8px;}
+  .logo-dot{width:8px;height:8px;border-radius:50%; background:var(--green);}
+
+  main{
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:60px 24px;
+    position:relative;
+    overflow:hidden;
+  }
+  main::before{
+    content:'';
+    position:absolute;
+    top:30%;left:50%;
+    transform:translate(-50%,-50%);
+    width:700px;height:500px;
+    background:radial-gradient(circle, rgba(16,185,129,0.14) 0%, transparent 70%);
+    pointer-events:none;
+  }
+
+  .card{
+    max-width:520px;
+    text-align:center;
+    position:relative;
+    z-index:1;
+  }
+
+  .check-circle{
+    width:72px;height:72px;
+    border-radius:50%;
+    background:rgba(16,185,129,0.12);
+    border:1px solid rgba(16,185,129,0.3);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 28px;
+    font-size:1.9rem;
+    color:var(--green);
+    animation:popIn 0.5s ease;
+  }
+  @keyframes popIn{
+    from{transform:scale(0.7); opacity:0;}
+    to{transform:scale(1); opacity:1;}
+  }
+
+  .card h1{
+    font-size:clamp(1.7rem, 3.4vw, 2.2rem);
+    margin-bottom:14px;
+  }
+  .card p.sub{
+    color:var(--muted);
+    font-size:1.02rem;
+    margin-bottom:36px;
+  }
+
+  .next-steps{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:26px 28px;
+    text-align:left;
+    margin-bottom:32px;
+  }
+  .next-steps h4{
+    font-size:0.85rem;
+    font-family:'JetBrains Mono',monospace;
+    color:var(--blue-light);
+    margin-bottom:18px;
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+  }
+  .step{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    margin-bottom:16px;
+  }
+  .step:last-child{margin-bottom:0;}
+  .step-num{
+    width:24px;height:24px;
+    border-radius:6px;
+    background:var(--surface-2);
+    border:1px solid var(--border);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:0.72rem;
+    font-family:'JetBrains Mono',monospace;
+    color:var(--muted);
+    flex-shrink:0;
+  }
+  .step p{font-size:0.9rem; color:var(--muted); margin:0;}
+  .step strong{color:var(--text);}
+
+  .btn-secondary{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:transparent;
+    color:var(--text);
+    padding:13px 26px;
+    border-radius:10px;
+    font-weight:600;
+    font-size:0.92rem;
+    border:1px solid var(--border);
+    transition:border-color 0.15s ease, background 0.15s ease;
+  }
+  .btn-secondary:hover{border-color:var(--blue-light); background:var(--surface);}
+
+  footer{
+    border-top:1px solid var(--border);
+    padding:24px;
+    text-align:center;
+    font-size:0.8rem;
+    color:var(--muted-2);
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="logo"><span class="logo-dot"></span>OriFlows</div>
+  </div>
+</nav>
+
+<main>
+  <div class="card">
+    <div class="check-circle">✓</div>
+    <h1>You're booked</h1>
+    <p class="sub">Your free revenue audit call is confirmed. A calendar invite is on its way to your inbox — see you then.</p>
+
+    <div class="next-steps">
+      <h4>// What happens next</h4>
+      <div class="step">
+        <span class="step-num">1</span>
+        <p><strong>Check your inbox.</strong> Your calendar invite with the call link has just been sent — please check spam/promotions if it doesn't land within a few minutes.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <p><strong>We review your practice details</strong> beforehand so the call focuses on your numbers, not a generic pitch.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <p><strong>We'll meet at your scheduled time</strong> for your 20-minute audit call — no prep needed on your end.</p>
+      </div>
+    </div>
+
+    <a href="index.html" class="btn-secondary">← Back to home</a>
+  </div>
+</main>
+
+<footer>
+  © <span id="year"></span> OriFlows. All rights reserved.
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
