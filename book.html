@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Book Your Free Revenue Audit | OriFlows</title>
-<meta name="description" content="20-minute free audit: find out exactly what missed calls and no-shows are costing your UK dental practice — no obligation.">
+<title>OriFlows — Stop Losing Patients to Missed Calls | UK Dental Automation</title>
+<meta name="description" content="OriFlows builds missed-call text-back, no-show reduction, and AI front-desk automation for UK private dental practices. Free revenue audit.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -24,212 +24,685 @@
     --red:#EF4444;
     --grad: linear-gradient(135deg, var(--blue) 0%, var(--blue-light) 100%);
   }
+
   *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
   body{
     background:var(--bg);
     color:var(--text);
     font-family:'Inter',sans-serif;
     line-height:1.6;
+    overflow-x:hidden;
   }
-  h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif; line-height:1.15; letter-spacing:-0.01em;}
-  a{color:inherit; text-decoration:none;}
-  .wrap{max-width:1100px; margin:0 auto; padding:0 24px;}
+
+  h1,h2,h3,h4{
+    font-family:'Space Grotesk',sans-serif;
+    line-height:1.15;
+    letter-spacing:-0.01em;
+  }
+
+  .mono{
+    font-family:'JetBrains Mono',monospace;
+  }
+
+  a{color:inherit;text-decoration:none;}
+
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 24px;
+  }
 
   @media (prefers-reduced-motion: reduce){
     *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
   }
 
+  /* ===== NAV ===== */
   nav{
-    position:fixed; top:0;left:0;right:0; z-index:100;
+    position:fixed;
+    top:0;left:0;right:0;
+    z-index:100;
     background:rgba(10,14,26,0.85);
     backdrop-filter:blur(12px);
     border-bottom:1px solid var(--border);
   }
   .nav-inner{
-    max-width:1100px; margin:0 auto; padding:16px 24px;
-    display:flex; align-items:center; justify-content:space-between;
+    max-width:1180px;
+    margin:0 auto;
+    padding:16px 24px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
   }
-  .logo{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.25rem; display:flex; align-items:center; gap:8px;}
-  .logo-dot{width:8px;height:8px;border-radius:50%; background:var(--green);}
-  .back-link{font-size:0.88rem; color:var(--muted); display:flex; align-items:center; gap:6px;}
-  .back-link:hover{color:var(--text);}
+  .logo{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    font-size:1.25rem;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .logo-dot{
+    width:8px;height:8px;border-radius:50%;
+    background:var(--green);
+    box-shadow:0 0 0 0 rgba(16,185,129,0.6);
+    animation:pulse 2s infinite;
+  }
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(16,185,129,0.5);}
+    70%{box-shadow:0 0 0 6px rgba(16,185,129,0);}
+    100%{box-shadow:0 0 0 0 rgba(16,185,129,0);}
+  }
+  .nav-links{
+    display:flex;
+    gap:32px;
+    font-size:0.9rem;
+    color:var(--muted);
+  }
+  .nav-links a:hover{color:var(--text);}
+  .nav-cta{
+    background:var(--grad);
+    color:#fff;
+    padding:10px 20px;
+    border-radius:8px;
+    font-weight:600;
+    font-size:0.88rem;
+  }
+  .nav-mobile-hide{display:flex;}
+  @media (max-width:760px){
+    .nav-mobile-hide{display:none;}
+  }
 
-  main{padding:150px 0 100px;}
-
-  .book-grid{
+  /* ===== HERO ===== */
+  .hero{
+    padding:160px 0 100px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:'';
+    position:absolute;
+    top:-200px;left:50%;
+    transform:translateX(-50%);
+    width:900px;height:600px;
+    background:radial-gradient(circle, rgba(37,99,235,0.18) 0%, transparent 70%);
+    pointer-events:none;
+  }
+  .hero-grid{
     display:grid;
-    grid-template-columns:0.95fr 1.05fr;
-    gap:56px;
-    align-items:flex-start;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:64px;
+    align-items:center;
+    position:relative;
+    z-index:1;
   }
-  @media (max-width:880px){
-    .book-grid{grid-template-columns:1fr; gap:40px;}
-    main{padding:120px 0 60px;}
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr; gap:48px;}
+    .hero{padding:130px 0 60px;}
   }
 
   .eyebrow{
-    display:inline-flex; align-items:center; gap:8px;
-    background:var(--surface); border:1px solid var(--border);
-    padding:6px 14px; border-radius:100px; font-size:0.78rem;
-    color:var(--blue-light); font-family:'JetBrains Mono',monospace;
-    margin-bottom:22px;
-  }
-
-  .book-left h1{
-    font-size:clamp(1.9rem, 3.6vw, 2.6rem);
-    margin-bottom:18px;
-  }
-  .book-left .accent{
-    background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent;
-  }
-  .book-left p.sub{color:var(--muted); font-size:1.04rem; margin-bottom:32px; max-width:460px;}
-
-  .what-you-get{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
     background:var(--surface);
     border:1px solid var(--border);
-    border-radius:14px;
-    padding:26px 28px;
+    padding:6px 14px;
+    border-radius:100px;
+    font-size:0.78rem;
+    color:var(--blue-light);
+    font-family:'JetBrains Mono',monospace;
     margin-bottom:24px;
   }
-  .what-you-get h4{font-size:0.95rem; margin-bottom:16px;}
-  .get-item{
-    display:flex; gap:10px; align-items:flex-start;
-    font-size:0.9rem; color:var(--muted);
-    margin-bottom:13px;
-  }
-  .get-item:last-child{margin-bottom:0;}
-  .get-item .check{color:var(--green); font-family:'JetBrains Mono',monospace; flex-shrink:0;}
 
-  .no-pressure{
-    display:flex; gap:10px; align-items:flex-start;
-    font-size:0.85rem; color:var(--muted-2);
-    padding:16px 18px;
-    border:1px dashed var(--border);
+  .hero h1{
+    font-size:clamp(2.1rem, 4.6vw, 3.4rem);
+    font-weight:700;
+    margin-bottom:22px;
+  }
+  .hero h1 .accent{
+    background:var(--grad);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+
+  .hero p.sub{
+    font-size:1.13rem;
+    color:var(--muted);
+    max-width:540px;
+    margin-bottom:32px;
+  }
+
+  .hero-ctas{
+    display:flex;
+    gap:14px;
+    margin-bottom:36px;
+    flex-wrap:wrap;
+  }
+  .btn-primary{
+    background:var(--grad);
+    color:#fff;
+    padding:15px 28px;
     border-radius:10px;
+    font-weight:600;
+    font-size:0.96rem;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    box-shadow:0 8px 24px -8px rgba(37,99,235,0.5);
+    transition:transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 12px 28px -8px rgba(37,99,235,0.6);}
+  .btn-secondary{
+    background:transparent;
+    color:var(--text);
+    padding:15px 28px;
+    border-radius:10px;
+    font-weight:600;
+    font-size:0.96rem;
+    border:1px solid var(--border);
+    transition:border-color 0.15s ease, background 0.15s ease;
+  }
+  .btn-secondary:hover{border-color:var(--blue-light); background:var(--surface);}
+
+  .hero-microcopy{
+    font-size:0.82rem;
+    color:var(--muted-2);
   }
 
-  .calc-card{
+  /* ===== HERO DEMO (signature element) ===== */
+  .demo-card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:0;
+    overflow:hidden;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,0.5);
+  }
+  .demo-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 18px;
+    border-bottom:1px solid var(--border);
+    background:var(--surface-2);
+  }
+  .demo-header-left{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:0.8rem;
+    color:var(--muted);
+    font-family:'JetBrains Mono',monospace;
+  }
+  .demo-dots{display:flex; gap:5px;}
+  .demo-dots span{width:8px;height:8px;border-radius:50%;background:var(--border);}
+  .demo-body{
+    padding:20px;
+    min-height:340px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .demo-event{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    opacity:0;
+    animation:fadeUp 0.5s ease forwards;
+  }
+  @keyframes fadeUp{
+    from{opacity:0; transform:translateY(8px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+  .demo-icon{
+    width:30px;height:30px;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    font-size:0.85rem;
+    margin-top:2px;
+  }
+  .demo-icon.missed{background:rgba(239,68,68,0.15); color:var(--red);}
+  .demo-icon.sent{background:rgba(37,99,235,0.15); color:var(--blue-light);}
+  .demo-icon.reply{background:rgba(16,185,129,0.15); color:var(--green);}
+  .demo-icon.booked{background:rgba(245,158,11,0.15); color:var(--amber);}
+  .demo-text{font-size:0.86rem;}
+  .demo-text .label{font-weight:600; display:block; margin-bottom:2px;}
+  .demo-text .meta{color:var(--muted-2); font-size:0.76rem; font-family:'JetBrains Mono',monospace;}
+  .demo-bubble{
+    background:var(--surface-2);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:10px 13px;
+    font-size:0.82rem;
+    color:var(--muted);
+    margin-top:6px;
+    max-width:88%;
+  }
+  .demo-footer{
+    border-top:1px solid var(--border);
+    padding:14px 18px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:var(--surface-2);
+  }
+  .demo-footer .stat{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.78rem;
+    color:var(--green);
+  }
+  .demo-restart{
+    font-size:0.75rem;
+    color:var(--muted-2);
+    cursor:pointer;
+    border:1px solid var(--border);
+    padding:5px 10px;
+    border-radius:6px;
+  }
+  .demo-restart:hover{color:var(--text); border-color:var(--muted-2);}
+
+  /* ===== SECTION SHARED ===== */
+  section{
+    padding:90px 0;
+    position:relative;
+  }
+  .section-tag{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.78rem;
+    color:var(--blue-light);
+    margin-bottom:14px;
+    display:block;
+  }
+  .section-head{
+    max-width:680px;
+    margin-bottom:56px;
+  }
+  .section-head h2{
+    font-size:clamp(1.7rem, 3vw, 2.4rem);
+    margin-bottom:16px;
+  }
+  .section-head p{
+    color:var(--muted);
+    font-size:1.05rem;
+  }
+  .divider{
+    height:1px;
+    background:var(--border);
+    border:none;
+  }
+
+  /* ===== PROBLEM SECTION ===== */
+  .problem{
+    background:var(--surface);
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+  }
+  .problem-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:var(--border);
+    border:1px solid var(--border);
+    border-radius:14px;
+    overflow:hidden;
+  }
+  @media (max-width:760px){
+    .problem-grid{grid-template-columns:1fr;}
+  }
+  .problem-cell{
+    background:var(--bg);
+    padding:32px 28px;
+  }
+  .problem-cell .big-stat{
+    font-family:'JetBrains Mono',monospace;
+    font-size:2.4rem;
+    font-weight:600;
+    color:var(--red);
+    margin-bottom:10px;
+    display:block;
+  }
+  .problem-cell h4{
+    font-size:1.02rem;
+    margin-bottom:8px;
+    font-weight:600;
+  }
+  .problem-cell p{
+    color:var(--muted);
+    font-size:0.92rem;
+  }
+  .problem-cell .src{
+    display:block;
+    margin-top:12px;
+    font-size:0.72rem;
+    color:var(--muted-2);
+    font-family:'JetBrains Mono',monospace;
+  }
+
+  .pain-mirror{
+    margin-top:48px;
+    background:var(--bg);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:32px;
+  }
+  .pain-mirror h4{
+    font-size:1.1rem;
+    margin-bottom:18px;
+    color:var(--text);
+  }
+  .pain-list{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px 28px;
+  }
+  @media (max-width:700px){ .pain-list{grid-template-columns:1fr;} }
+  .pain-item{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+    font-size:0.93rem;
+    color:var(--muted);
+  }
+  .pain-item .x{
+    color:var(--red);
+    font-family:'JetBrains Mono',monospace;
+    flex-shrink:0;
+  }
+
+  /* ===== SERVICES ===== */
+  .services-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+  }
+  @media (max-width:900px){ .services-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:620px){ .services-grid{grid-template-columns:1fr;} }
+
+  .service-card{
     background:var(--surface);
     border:1px solid var(--border);
     border-radius:14px;
-    padding:26px 28px;
-    margin-top:24px;
+    padding:30px 26px;
+    transition:border-color 0.2s ease, transform 0.2s ease;
+    position:relative;
   }
-  .calc-card h4{font-size:0.95rem; margin-bottom:6px;}
-  .calc-card .calc-sub{font-size:0.82rem; color:var(--muted-2); margin-bottom:18px;}
-  .calc-row{margin-bottom:16px;}
-  .calc-row label{display:flex; justify-content:space-between; font-size:0.85rem; color:var(--muted); margin-bottom:8px;}
-  .calc-row label span{font-family:'JetBrains Mono',monospace; color:var(--blue-light);}
-  .calc-row input[type=range]{
-    width:100%; accent-color:var(--blue-light);
+  .service-card:hover{
+    border-color:var(--blue);
+    transform:translateY(-3px);
   }
-  .calc-result{
+  .service-card.featured{
+    border-color:var(--blue);
+    background:linear-gradient(160deg, rgba(37,99,235,0.1), var(--surface) 60%);
+  }
+  .service-card .tag-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    margin-bottom:18px;
+  }
+  .service-icon{
+    width:42px;height:42px;
+    border-radius:10px;
+    background:var(--surface-2);
+    border:1px solid var(--border);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.2rem;
+  }
+  .service-card.featured .service-icon{
+    background:var(--grad);
+    border:none;
+  }
+  .new-badge{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.68rem;
+    background:rgba(16,185,129,0.15);
+    color:var(--green);
+    padding:4px 9px;
+    border-radius:6px;
+    height:fit-content;
+  }
+  .service-card h3{
+    font-size:1.15rem;
+    margin-bottom:10px;
+  }
+  .service-card p{
+    color:var(--muted);
+    font-size:0.92rem;
+    margin-bottom:18px;
+  }
+  .result-line{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:0.85rem;
+    color:var(--green);
+    font-weight:600;
+    padding-top:14px;
+    border-top:1px solid var(--border);
+  }
+  .result-line .arrow{font-family:'JetBrains Mono',monospace;}
+
+  /* ===== PROOF SECTION ===== */
+  .proof{
+    background:var(--surface);
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+  }
+  .proof-banner{
     background:var(--bg);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:24px 28px;
+    margin-bottom:40px;
+    display:flex;
+    align-items:center;
+    gap:16px;
+  }
+  .proof-banner .dot{
+    width:10px;height:10px;border-radius:50%;
+    background:var(--amber);
+    flex-shrink:0;
+    box-shadow:0 0 0 0 rgba(245,158,11,0.5);
+    animation:pulse2 2s infinite;
+  }
+  @keyframes pulse2{
+    0%{box-shadow:0 0 0 0 rgba(245,158,11,0.5);}
+    70%{box-shadow:0 0 0 6px rgba(245,158,11,0);}
+    100%{box-shadow:0 0 0 0 rgba(245,158,11,0);}
+  }
+  .proof-banner p{font-size:0.93rem; color:var(--muted); margin:0;}
+  .proof-banner strong{color:var(--text);}
+
+  .case-card{
+    background:var(--bg);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:32px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:32px;
+  }
+  @media (max-width:760px){ .case-card{grid-template-columns:1fr;} }
+  .case-meta{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .case-meta .clinic{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:600;
+    font-size:1.05rem;
+  }
+  .case-meta .loc{
+    color:var(--muted-2);
+    font-size:0.85rem;
+    font-family:'JetBrains Mono',monospace;
+  }
+  .case-meta p{
+    color:var(--muted);
+    font-size:0.92rem;
+  }
+  .case-stats{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+  }
+  .case-stat{
+    background:var(--surface);
     border:1px solid var(--border);
     border-radius:10px;
     padding:18px;
-    margin-top:18px;
-    text-align:center;
   }
-  .calc-result .num{
+  .case-stat .num{
     font-family:'JetBrains Mono',monospace;
-    font-size:1.9rem;
+    font-size:1.6rem;
     font-weight:600;
-    color:var(--red);
+    color:var(--blue-light);
     display:block;
   }
-  .calc-result .lbl{font-size:0.8rem; color:var(--muted-2); margin-top:4px;}
-  .calc-note{font-size:0.72rem; color:var(--muted-2); margin-top:10px; text-align:center;}
+  .case-stat .lbl{
+    font-size:0.78rem;
+    color:var(--muted);
+    margin-top:4px;
+  }
 
-  /* Right side: form panel */
-  .form-panel{
-    background:var(--surface);
-    border:1px solid var(--border);
-    border-radius:16px;
-    padding:36px;
-    box-shadow:0 30px 60px -20px rgba(0,0,0,0.5);
+  /* ===== PROCESS ===== */
+  .process-list{
+    display:flex;
+    flex-direction:column;
   }
-  .form-panel h3{font-size:1.25rem; margin-bottom:6px;}
-  .form-panel .form-sub{color:var(--muted); font-size:0.9rem; margin-bottom:28px;}
-
-  .field{margin-bottom:18px;}
-  .field label{
-    display:block; font-size:0.82rem; color:var(--muted); margin-bottom:7px; font-weight:500;
+  .process-item{
+    display:grid;
+    grid-template-columns:80px 1fr;
+    gap:24px;
+    padding:28px 0;
+    border-bottom:1px solid var(--border);
   }
-  .field input, .field select, .field textarea{
-    width:100%;
-    background:var(--surface-2);
-    border:1px solid var(--border);
-    border-radius:9px;
-    padding:12px 14px;
-    color:var(--text);
-    font-family:'Inter',sans-serif;
-    font-size:0.92rem;
-    outline:none;
-    transition:border-color 0.15s ease;
+  .process-item:first-child{border-top:1px solid var(--border);}
+  .process-num{
+    font-family:'JetBrains Mono',monospace;
+    color:var(--blue-light);
+    font-size:0.95rem;
   }
-  .field input:focus, .field select:focus, .field textarea:focus{
-    border-color:var(--blue-light);
-  }
-  .field textarea{resize:vertical; min-height:80px;}
-  .field-row{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
-  @media (max-width:500px){ .field-row{grid-template-columns:1fr;} }
-
-  .submit-btn{
-    width:100%;
-    background:var(--grad);
-    color:#fff;
-    border:none;
-    padding:15px;
-    border-radius:10px;
-    font-weight:600;
-    font-size:0.97rem;
-    cursor:pointer;
+  .process-item h4{font-size:1.1rem; margin-bottom:8px;}
+  .process-item p{color:var(--muted); font-size:0.92rem; max-width:560px;}
+  .process-item .when{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.75rem;
+    color:var(--muted-2);
     margin-top:8px;
-    transition:transform 0.15s ease, box-shadow 0.15s ease;
-    box-shadow:0 8px 24px -8px rgba(37,99,235,0.5);
+    display:block;
   }
-  .submit-btn:hover{transform:translateY(-2px);}
-  .submit-btn:disabled{opacity:0.6; cursor:not-allowed; transform:none;}
 
-  .form-foot{
+  /* ===== FAQ ===== */
+  .faq-item{
+    border-bottom:1px solid var(--border);
+    padding:22px 0;
+  }
+  .faq-q{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    cursor:pointer;
+    font-weight:600;
+    font-size:1rem;
+  }
+  .faq-q .plus{
+    font-family:'JetBrains Mono',monospace;
+    color:var(--blue-light);
+    transition:transform 0.2s ease;
+    font-size:1.2rem;
+  }
+  .faq-item.open .plus{transform:rotate(45deg);}
+  .faq-a{
+    color:var(--muted);
+    font-size:0.92rem;
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.25s ease;
+  }
+  .faq-a-inner{padding-top:14px;}
+  .faq-item.open .faq-a{max-height:300px;}
+
+  /* ===== FINAL CTA ===== */
+  .final-cta{
+    background:linear-gradient(160deg, var(--surface), var(--bg));
+    border-top:1px solid var(--border);
     text-align:center;
+  }
+  .final-cta h2{
+    font-size:clamp(1.8rem,3.6vw,2.6rem);
+    margin-bottom:18px;
+  }
+  .final-cta p{
+    color:var(--muted);
+    max-width:520px;
+    margin:0 auto 32px;
+    font-size:1.05rem;
+  }
+
+  /* ===== FOOTER ===== */
+  footer{
+    border-top:1px solid var(--border);
+    padding:48px 0 28px;
+  }
+  .footer-grid{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:24px;
+    margin-bottom:32px;
+  }
+  .footer-brand .logo{margin-bottom:10px;}
+  .footer-brand p{color:var(--muted-2); font-size:0.85rem; max-width:280px;}
+  .footer-links{
+    display:flex;
+    gap:48px;
+    flex-wrap:wrap;
+  }
+  .footer-col h5{
     font-size:0.78rem;
     color:var(--muted-2);
-    margin-top:16px;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    margin-bottom:14px;
+    font-family:'JetBrains Mono',monospace;
+  }
+  .footer-col a{
+    display:block;
+    color:var(--muted);
+    font-size:0.88rem;
+    margin-bottom:10px;
+  }
+  .footer-col a:hover{color:var(--text);}
+  .footer-bottom{
+    display:flex;
+    justify-content:space-between;
+    color:var(--muted-2);
+    font-size:0.8rem;
+    flex-wrap:wrap;
+    gap:10px;
   }
 
-  footer{border-top:1px solid var(--border); padding:32px 0; margin-top:40px;}
-  .footer-inner{display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:0.82rem; color:var(--muted-2);}
-
-  /* Calendar panel (shown after form submit) */
-  .calendar-panel{
-    background:var(--surface);
-    border:1px solid var(--border);
-    border-radius:16px;
-    padding:28px;
-    box-shadow:0 30px 60px -20px rgba(0,0,0,0.5);
-    display:none;
+  /* ===== reveal on scroll ===== */
+  .reveal{
+    opacity:0;
+    transform:translateY(16px);
+    transition:opacity 0.6s ease, transform 0.6s ease;
   }
-  .calendar-panel.active{display:block;}
-  .calendar-panel h3{font-size:1.15rem; margin-bottom:4px;}
-  .calendar-panel .cal-sub{color:var(--muted); font-size:0.88rem; margin-bottom:20px;}
-  .calendar-panel .cal-sub strong{color:var(--green);}
-  #cal-embed{width:100%; min-height:600px; border-radius:10px; overflow:hidden;}
-
-  .form-panel.hidden{display:none;}
-
-  .form-error{
-    background:rgba(239,68,68,0.1);
-    border:1px solid var(--red);
-    color:#FCA5A5;
-    padding:12px 14px;
-    border-radius:9px;
-    font-size:0.85rem;
-    margin-bottom:16px;
-    display:none;
+  .reveal.visible{
+    opacity:1;
+    transform:translateY(0);
   }
-  .form-error.active{display:block;}
 </style>
 </head>
 <body>
@@ -237,249 +710,70 @@
 <nav>
   <div class="nav-inner">
     <div class="logo"><span class="logo-dot"></span>OriFlows</div>
-    <a href="index.html" class="back-link">← Back to home</a>
+    <div class="nav-links nav-mobile-hide">
+      <a href="#problem">The Problem</a>
+      <a href="#services">Services</a>
+      <a href="#proof">Results</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a href="book.html" class="nav-cta">Book Free Audit</a>
   </div>
 </nav>
 
-<main>
-  <div class="wrap">
-    <div class="book-grid">
-
-      <div class="book-left">
-        <div class="eyebrow">● FREE — 20 MINUTES — NO OBLIGATION</div>
-        <h1>Find out what missed calls are <span class="accent">really costing</span> your practice</h1>
-        <p class="sub">Tell us a bit about your practice below. We'll review your current call handling and booking flow, then walk you through real numbers on your free audit call — not generic industry stats.</p>
-
-        <div class="what-you-get">
-          <h4>What happens on the call</h4>
-          <div class="get-item"><span class="check">✓</span> We estimate your actual missed-call and no-show cost using your numbers</div>
-          <div class="get-item"><span class="check">✓</span> You see exactly what the automation looks like for a practice like yours</div>
-          <div class="get-item"><span class="check">✓</span> You get a straight answer on whether it's worth it — even if that answer is "not yet"</div>
-        </div>
-
-        <div class="no-pressure">
-          <span>🛈</span>
-          <span>No contract is signed on this call. It's a diagnostic conversation, not a sales pitch — if it's not a fit, we'll tell you.</span>
-        </div>
-
-        <div class="calc-card">
-          <h4>Quick estimate</h4>
-          <p class="calc-sub">Drag to roughly match your practice — see your rough monthly cost before you even book.</p>
-
-          <div class="calc-row">
-            <label>New patient enquiry calls per month <span id="callsVal">120</span></label>
-            <input type="range" id="callsSlider" min="20" max="400" value="120" step="10">
-          </div>
-          <div class="calc-row">
-            <label>Average new patient value (£) <span id="valueVal">£250</span></label>
-            <input type="range" id="valueSlider" min="80" max="600" value="250" step="10">
-          </div>
-
-          <div class="calc-result">
-            <span class="num" id="calcOutput">£3,150/mo</span>
-            <span class="lbl">estimated lost revenue from missed calls alone</span>
-          </div>
-          <p class="calc-note">Based on a 30% average missed-call rate and 35% of those being lost permanently — industry-reported ranges, not a guarantee for your specific practice.</p>
-        </div>
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">● LIVE — built for UK private dental practices</div>
+      <h1>Your front desk can't answer every call.<br><span class="accent">Your automation never misses one.</span></h1>
+      <p class="sub">Every unanswered call at your practice is a patient calling the clinic down the road instead. OriFlows installs the missed-call text-back, no-show reminders, and AI front desk that catches them — running quietly in the background, on the systems you already use.</p>
+      <div class="hero-ctas">
+        <a href="book.html" class="btn-primary">Get my free revenue audit →</a>
+        <a href="#proof" class="btn-secondary">See real numbers</a>
       </div>
+      <p class="hero-microcopy">No contract lock-in · Live in 7–14 days · Built for your exact practice</p>
+    </div>
 
-      <div class="form-panel" id="formPanel">
-        <h3>Book your free audit</h3>
-        <p class="form-sub">Fill this in, then pick a time that works for you — instantly.</p>
-
-        <div class="form-error" id="formError">Something went wrong submitting the form. Please check your details and try again, or email us directly.</div>
-
-        <form id="auditForm">
-          <div class="field-row">
-            <div class="field">
-              <label for="name">Full name</label>
-              <input type="text" id="name" name="name" required placeholder="Jane Smith">
-            </div>
-            <div class="field">
-              <label for="practice">Practice name</label>
-              <input type="text" id="practice" name="practice" required placeholder="Riverside Dental">
-            </div>
-          </div>
-
-          <div class="field-row">
-            <div class="field">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required placeholder="jane@riversidedental.co.uk">
-            </div>
-            <div class="field">
-              <label for="phone">Phone</label>
-              <input type="tel" id="phone" name="phone" required placeholder="07xxx xxxxxx">
-            </div>
-          </div>
-
-          <div class="field">
-            <label for="size">Practice size</label>
-            <select id="size" name="size" required>
-              <option value="" disabled selected>Select one</option>
-              <option value="solo">Solo dentist</option>
-              <option value="2-4">2–4 dentists</option>
-              <option value="5+">5+ dentists / multi-site</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="challenge">Biggest current challenge (optional)</label>
-            <textarea id="challenge" name="challenge" placeholder="e.g. We know we're missing calls during lunch but have no idea how many"></textarea>
-          </div>
-
-          <input type="hidden" name="_subject" value="New OriFlows Audit Booking">
-
-          <button type="submit" class="submit-btn" id="submitBtn">Continue to pick a time →</button>
-          <p class="form-foot">We'll never share your details. Unsubscribe from any email anytime.</p>
-        </form>
+    <div class="demo-card" id="demoCard">
+      <div class="demo-header">
+        <div class="demo-header-left">
+          <span style="width:7px;height:7px;border-radius:50%;background:var(--green);display:inline-block;"></span>
+          oriflows-automation · live simulation
+        </div>
+        <div class="demo-dots"><span></span><span></span><span></span></div>
       </div>
-
-      <div class="calendar-panel" id="calendarPanel">
-        <h3>Pick a time that works for you</h3>
-        <p class="cal-sub"><strong>✓ Details received.</strong> Choose any free slot below to confirm your audit call instantly.</p>
-        <div id="cal-embed"></div>
+      <div class="demo-body" id="demoBody"></div>
+      <div class="demo-footer">
+        <span class="stat" id="demoStat">⏱ response time: —</span>
+        <span class="demo-restart" id="demoRestart">↻ replay</span>
       </div>
-
     </div>
   </div>
-</main>
+</header>
 
-<footer>
-  <div class="wrap footer-inner">
-    <span>© <span id="year"></span> OriFlows</span>
-    <a href="index.html" style="color:var(--muted-2);">← Back to home</a>
-  </div>
-</footer>
+<!-- ===== PROBLEM ===== -->
+<section class="problem" id="problem">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-tag">// THE REALITY</span>
+      <h2>This is what's happening at your practice right now — whether you've measured it or not</h2>
+      <p>These aren't OriFlows numbers. They're industry-wide findings from dental phone-system and practice-management research. Your exact figure depends on your call volume, but the pattern is consistent across UK and international practices.</p>
+    </div>
 
-<script>
-document.getElementById('year').textContent = new Date().getFullYear();
-
-const callsSlider = document.getElementById('callsSlider');
-const valueSlider = document.getElementById('valueSlider');
-const callsVal = document.getElementById('callsVal');
-const valueVal = document.getElementById('valueVal');
-const calcOutput = document.getElementById('calcOutput');
-
-function formatGBP(n){
-  return '£' + Math.round(n).toLocaleString('en-GB');
-}
-
-function recalc(){
-  const calls = parseInt(callsSlider.value, 10);
-  const value = parseInt(valueSlider.value, 10);
-  callsVal.textContent = calls;
-  valueVal.textContent = formatGBP(value);
-
-  const missedRate = 0.30;
-  const lostForGoodRate = 0.35;
-  const lost = calls * missedRate * lostForGoodRate * value;
-  calcOutput.textContent = formatGBP(lost) + '/mo';
-}
-
-callsSlider.addEventListener('input', recalc);
-valueSlider.addEventListener('input', recalc);
-recalc();
-
-// Submit form via AJAX to Formspree, then reveal Cal.com calendar
-const auditForm = document.getElementById('auditForm');
-const submitBtn = document.getElementById('submitBtn');
-const formPanel = document.getElementById('formPanel');
-const calendarPanel = document.getElementById('calendarPanel');
-const formError = document.getElementById('formError');
-
-let calEmbedLoaded = false;
-
-function loadCalEmbed(){
-  if (calEmbedLoaded) return;
-  calEmbedLoaded = true;
-
-  (function (C, A, L) {
-    let p = function (a, ar) { a.q.push(ar); };
-    let d = C.document;
-    C.Cal = C.Cal || function () {
-      let cal = C.Cal;
-      let ar = arguments;
-      if (!cal.loaded) {
-        cal.ns = {};
-        cal.q = cal.q || [];
-        d.head.appendChild(d.createElement("script")).src = A;
-        cal.loaded = true;
-      }
-      if (ar[0] === L) {
-        const api = function () { p(api, arguments); };
-        const namespace = ar[1];
-        api.q = api.q || [];
-        if (typeof namespace === "string") {
-          cal.ns[namespace] = cal.ns[namespace] || api;
-          p(cal.ns[namespace], ar);
-          p(cal, ["initNamespace", namespace]);
-        } else p(cal, ar);
-        return;
-      }
-      p(cal, ar);
-    };
-  })(window, "https://app.cal.com/embed/embed.js", "init");
-
-  Cal("init", { origin: "https://app.cal.com" });
-
-  const nameVal = auditForm.querySelector('[name="name"]')?.value || '';
-  const emailVal = auditForm.querySelector('[name="email"]')?.value || '';
-  const calLinkWithPrefill = `https://cal.com/tazul-oriflows/free-audit?name=${encodeURIComponent(nameVal)}&email=${encodeURIComponent(emailVal)}`;
-
-  Cal("inline", {
-    elementOrSelector: "#cal-embed",
-    calLink: calLinkWithPrefill,
-    config: {
-      theme: "dark",
-      layout: "month_view"
-    }
-  });
-
-  Cal("ui", {
-    theme: "dark",
-    styles: { branding: { brandColor: "#2563EB" } },
-    hideEventTypeDetails: false
-  });
-
-  Cal("on", {
-    action: "bookingSuccessful",
-    callback: function() {
-      setTimeout(function(){
-        window.location.href = "thank-you.html";
-      }, 1500);
-    }
-  });
-}
-
-auditForm.addEventListener('submit', async function(e){
-  e.preventDefault();
-  formError.classList.remove('active');
-  submitBtn.disabled = true;
-  submitBtn.textContent = 'Submitting...';
-
-  try {
-    const formData = new FormData(auditForm);
-    const response = await fetch('https://formspree.io/f/xwvdbgqa', {
-      method: 'POST',
-      body: formData,
-      headers: { 'Accept': 'application/json' }
-    });
-
-    if (response.ok) {
-      formPanel.classList.add('hidden');
-      calendarPanel.classList.add('active');
-      loadCalEmbed();
-      calendarPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    } else {
-      throw new Error('Formspree error');
-    }
-  } catch (err) {
-    formError.classList.add('active');
-    submitBtn.disabled = false;
-    submitBtn.textContent = 'Continue to pick a time →';
-  }
-});
-</script>
-
-</body>
-</html>
+    <div class="problem-grid reveal">
+      <div class="problem-cell">
+        <span class="big-stat">20–35%</span>
+        <h4>of inbound calls go unanswered</h4>
+        <p>During lunch, peak Monday mornings, and after-hours — exactly when patients are trying to book.</p>
+        <span class="src">SOURCE: PRACTICE PHONE-SYSTEM STUDIES, 2025</span>
+      </div>
+      <div class="problem-cell">
+        <span class="big-stat">~80%</span>
+        <h4>of missed calls are booking requests</h4>
+        <p>Not general enquiries. Patients ready to put money in your diary — going straight to voicemail.</p>
+        <span class="src">SOURCE: DENTAL CALL-HANDLING RESEARCH</span>
+      </div>
+      <div class="problem-cell">
+        <span class="big-stat">75%</span>
+        <h4>never call back</h4>
+       
