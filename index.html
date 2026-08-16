@@ -3,9 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OriFlows — Stop Losing Patients to Missed Calls | UK Dental Automation</title>
+<title>Dental Practice Automation UK | AI Automation for Private Dentists | OriFlows</title>
 <meta name="description" content="OriFlows builds missed-call text-back, no-show reduction, and AI front-desk automation for UK private dental practices. Free revenue audit.">
+<link rel="canonical" href="https://oriflows.com/">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="OriFlows">
+<meta property="og:title" content="OriFlows — Stop Losing Patients to Missed Calls and No-Shows">
+<meta property="og:description" content="Missed-call text-back, no-show reduction, patient recall and an AI front desk for UK private dental practices. Free revenue audit, no contract lock-in.">
+<meta property="og:url" content="https://oriflows.com/">
+<meta property="og:locale" content="en_GB">
+<meta property="og:image" content="https://oriflows.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="OriFlows — Stop Losing Patients to Missed Calls and No-Shows">
+<meta name="twitter:description" content="Missed-call text-back, no-show reduction, patient recall and an AI front desk for UK private dental practices.">
+<meta name="twitter:image" content="https://oriflows.com/assets/og-image.png">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "OriFlows",
+  "url": "https://oriflows.com/",
+  "email": "tazul@oriflows.com",
+  "description": "OriFlows helps UK private dental practices automate missed-call recovery, lead follow-up, appointment workflows, patient recall and AI-assisted reception.",
+  "areaServed": "GB",
+  "founder": { "@type": "Person", "name": "Tazul Islam" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "OriFlows",
+  "url": "https://oriflows.com/"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Do I need to switch my phone system or PMS?","acceptedAnswer":{"@type":"Answer","text":"No. OriFlows connects to what you already use — your existing phone number and booking workflow stay the same. We add the automation layer behind it."}},
+    {"@type":"Question","name":"Is this only for private practices, not NHS?","acceptedAnswer":{"@type":"Answer","text":"We focus specifically on private UK dental practices, where missed bookings and no-shows directly cost revenue per patient — that's where this system has the clearest, fastest payback."}},
+    {"@type":"Question","name":"What's the actual tech behind this?","acceptedAnswer":{"@type":"Answer","text":"A managed automation system built specifically for your practice's phone, calendar, and patient workflow. We handle the technical setup and maintenance end-to-end — you just see the results land in your calendar."}},
+    {"@type":"Question","name":"Is patient data handled securely (GDPR)?","acceptedAnswer":{"@type":"Answer","text":"Yes. Patient data is processed using GoHighLevel, a secure platform with its own data protection safeguards, and only used to run your automations — never sold or used for anything else. A Data Processing Agreement is available on request."}},
+    {"@type":"Question","name":"Is there a contract?","acceptedAnswer":{"@type":"Answer","text":"No lock-in contract. You pay a one-off setup fee plus a monthly fee, and can stop at any time."}},
+    {"@type":"Question","name":"How fast will I see results?","acceptedAnswer":{"@type":"Answer","text":"Missed-call recovery starts working from day one of going live. No-show reduction and recall follow-up typically show a clear trend within 30 days."}}
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -159,11 +208,17 @@
   }
 
   .hero h1{
-    font-size:clamp(2.1rem, 4.6vw, 3.4rem);
+    font-size:clamp(1.7rem, 3.2vw, 2.5rem);
     font-weight:700;
+    margin-bottom:14px;
+  }
+  .hero-subhead{
+    font-size:clamp(1.5rem, 3.4vw, 2.5rem);
+    font-weight:700;
+    line-height:1.25;
     margin-bottom:22px;
   }
-  .hero h1 .accent{
+  .hero-subhead .accent{
     background:var(--grad);
     -webkit-background-clip:text;
     background-clip:text;
@@ -309,6 +364,34 @@
   }
   .demo-restart:hover{color:var(--text); border-color:var(--muted-2);}
 
+  /* ===== TRUST BAR ===== */
+  .trust-bar{
+    padding:22px 0;
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+    background:var(--surface);
+  }
+  .trust-bar-inner{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:28px 40px;
+  }
+  .trust-item{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:0.82rem;
+    color:var(--muted);
+    font-family:'JetBrains Mono',monospace;
+    white-space:nowrap;
+  }
+  .trust-icon{font-size:0.95rem;}
+  @media (max-width:700px){
+    .trust-bar-inner{gap:16px 24px;}
+    .trust-item{font-size:0.76rem;}
+  }
+
   /* ===== SECTION SHARED ===== */
   section{
     padding:90px 0;
@@ -417,6 +500,42 @@
     flex-shrink:0;
   }
 
+  /* ===== BEFORE/AFTER ===== */
+  .compare-grid{
+    border:1px solid var(--border);
+    border-radius:14px;
+    overflow:hidden;
+  }
+  .compare-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+  }
+  .compare-row:not(:last-child){border-bottom:1px solid var(--border);}
+  .compare-before,.compare-after{
+    padding:20px 26px;
+    font-size:0.92rem;
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+  }
+  .compare-before{background:var(--surface); color:var(--muted); border-right:1px solid var(--border);}
+  .compare-after{background:rgba(16,185,129,0.06); color:var(--text);}
+  .compare-before .x{color:var(--red); flex-shrink:0;}
+  .compare-after .check{color:var(--green); flex-shrink:0;}
+  .compare-head .compare-before,.compare-head .compare-after{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.78rem;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    color:var(--muted-2);
+    background:var(--bg);
+    padding:14px 26px;
+  }
+  @media (max-width:700px){
+    .compare-row{grid-template-columns:1fr;}
+    .compare-before{border-right:none; border-bottom:1px solid var(--border);}
+  }
+
   /* ===== SERVICES ===== */
   .services-grid{
     display:grid;
@@ -491,6 +610,62 @@
     border-top:1px solid var(--border);
   }
   .result-line .arrow{font-family:'JetBrains Mono',monospace;}
+
+  /* ===== INTEGRATIONS ===== */
+  .integration-grid{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:14px;
+  }
+  @media (max-width:900px){ .integration-grid{grid-template-columns:repeat(3,1fr);} }
+  @media (max-width:480px){ .integration-grid{grid-template-columns:repeat(2,1fr);} }
+  .integration-item{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:22px 12px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+    font-size:0.85rem;
+    color:var(--muted);
+    text-align:center;
+    transition:border-color 0.2s ease;
+  }
+  .integration-item:hover{border-color:var(--blue);}
+  .integration-icon{font-size:1.5rem;}
+
+  /* ===== DEMO VIDEO ===== */
+  .video-frame{
+    border-radius:14px;
+    overflow:hidden;
+    border:1px solid var(--border);
+    background:var(--surface);
+  }
+  .video-frame iframe{width:100%; aspect-ratio:16/9; display:block; border:0;}
+  .video-placeholder{
+    aspect-ratio:16/9;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
+    background:radial-gradient(circle, rgba(37,99,235,0.12) 0%, var(--surface) 70%);
+    color:var(--muted);
+  }
+  .play-btn{
+    width:64px;height:64px;
+    border-radius:50%;
+    background:var(--grad);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.3rem;
+    box-shadow:0 8px 24px -8px rgba(37,99,235,0.5);
+  }
+  .video-label{font-size:0.85rem; font-family:'JetBrains Mono',monospace;}
 
   /* ===== PROOF SECTION ===== */
   .proof{
@@ -583,16 +758,39 @@
   }
   .process-item{
     display:grid;
-    grid-template-columns:80px 1fr;
+    grid-template-columns:56px 1fr;
     gap:24px;
-    padding:28px 0;
-    border-bottom:1px solid var(--border);
+    padding:28px 0 28px 4px;
   }
   .process-item:first-child{border-top:1px solid var(--border);}
+  .process-marker{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+  .process-icon{
+    width:44px;height:44px;
+    border-radius:50%;
+    background:var(--surface);
+    border:1px solid var(--border);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.15rem;
+    flex-shrink:0;
+  }
+  .process-line{
+    width:1px;
+    flex:1;
+    background:var(--border);
+    margin-top:6px;
+  }
   .process-num{
     font-family:'JetBrains Mono',monospace;
     color:var(--blue-light);
-    font-size:0.95rem;
+    font-size:0.82rem;
+    display:block;
+    margin-bottom:6px;
   }
   .process-item h4{font-size:1.1rem; margin-bottom:8px;}
   .process-item p{color:var(--muted); font-size:0.92rem; max-width:560px;}
@@ -603,6 +801,88 @@
     margin-top:8px;
     display:block;
   }
+
+  /* ===== ROI CALCULATOR ===== */
+  .roi-card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:36px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:36px;
+    align-items:center;
+  }
+  @media (max-width:760px){ .roi-card{grid-template-columns:1fr; gap:28px;} }
+  .roi-inputs{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+  }
+  .roi-inputs label{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    font-size:0.85rem;
+    color:var(--muted);
+    font-family:'JetBrains Mono',monospace;
+  }
+  .roi-inputs input[type="number"]{
+    background:var(--bg);
+    border:1px solid var(--border);
+    color:var(--text);
+    padding:10px 14px;
+    border-radius:8px;
+    font-size:1rem;
+    font-family:'Inter',sans-serif;
+  }
+  .roi-inputs input[type="range"]{
+    accent-color:var(--blue);
+  }
+  .roi-output{
+    background:var(--bg);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:28px;
+    text-align:center;
+  }
+  .roi-figure{
+    font-family:'JetBrains Mono',monospace;
+    font-size:2.6rem;
+    font-weight:600;
+    color:var(--green);
+    display:block;
+  }
+  .roi-figure-label{color:var(--muted); font-size:0.85rem; display:block; margin-top:6px;}
+  .roi-formula{color:var(--muted-2); font-size:0.72rem; display:block; margin-top:14px; font-family:'JetBrains Mono',monospace;}
+  .roi-disclaimer{color:var(--muted-2); font-size:0.8rem; text-align:center; margin-top:20px;}
+
+  /* ===== FOUNDER ===== */
+  .founder-card{
+    display:flex;
+    gap:24px;
+    align-items:flex-start;
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:32px;
+  }
+  @media (max-width:600px){ .founder-card{flex-direction:column; align-items:center; text-align:center;} }
+  .founder-avatar{
+    width:64px;height:64px;
+    border-radius:50%;
+    background:var(--grad);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    font-size:1.15rem;
+    flex-shrink:0;
+  }
+  .founder-bio h4{font-size:1.05rem; margin-bottom:10px;}
+  .founder-bio p{color:var(--muted); font-size:0.93rem;}
 
   /* ===== FAQ ===== */
   .faq-item{
@@ -705,32 +985,57 @@
     transform:translateY(0);
   }
 </style>
+<noscript><style>.reveal{opacity:1 !important; transform:none !important;}</style></noscript>
 </head>
 <body>
 
 <nav>
   <div class="nav-inner">
-    <div class="logo"><span class="logo-dot"></span>OriFlows</div>
+    <a href="/" class="logo"><span class="logo-dot"></span>OriFlows</a>
     <div class="nav-links nav-mobile-hide">
-      <a href="#problem">The Problem</a>
-      <a href="#services">Services</a>
-      <a href="#proof">Results</a>
+      <div class="nav-dropdown">
+        <a href="/dental-clinic-automation/">Solutions ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="/dental-clinic-automation/">Dental Clinic Automation</a>
+          <a href="/dental-lead-generation/">Dental Lead Generation</a>
+          <a href="/ai-receptionist-dental-practice/">AI Receptionist</a>
+          <a href="/missed-call-text-back-dental/">Missed Call Recovery</a>
+          <a href="/dental-patient-follow-up/">Patient Follow-Up</a>
+          <a href="/dental-no-show-automation/">No-Show Automation</a>
+          <a href="/dental-recall-automation/">Patient Recall</a>
+        </div>
+      </div>
+      <a href="#how-it-works">How It Works</a>
+      <a href="/resources/">Resources</a>
       <a href="#faq">FAQ</a>
     </div>
-    <a href="book.html" class="nav-cta">Book Free Audit</a>
+    <a href="/free-dental-automation-audit/" class="nav-cta">Free Audit</a>
   </div>
 </nav>
+<style>
+.nav-dropdown{position:relative;}
+.nav-dropdown-menu{
+  position:absolute; top:100%; left:0; margin-top:14px;
+  background:var(--surface-2); border:1px solid var(--border); border-radius:12px;
+  padding:10px; min-width:230px; display:none; flex-direction:column;
+  box-shadow:0 20px 40px -10px rgba(0,0,0,0.5);
+}
+.nav-dropdown:hover .nav-dropdown-menu{display:flex;}
+.nav-dropdown-menu a{padding:9px 12px; border-radius:7px; font-size:0.86rem; color:var(--muted);}
+.nav-dropdown-menu a:hover{background:var(--surface); color:var(--text);}
+</style>
 
 <!-- ===== HERO ===== -->
 <header class="hero">
   <div class="wrap hero-grid">
     <div>
       <div class="eyebrow">● LIVE — built for UK private dental practices</div>
-      <h1>Your front desk can't answer every call.<br><span class="accent">Your automation never misses one.</span></h1>
-      <p class="sub">Every unanswered call at your practice is a patient calling the clinic down the road instead. OriFlows installs the missed-call text-back, no-show reminders, and AI front desk that catches them — running quietly in the background, on the systems you already use.</p>
+      <h1>Dental Practice Automation for UK Private Dental Practices</h1>
+      <p class="hero-subhead">Stop losing patients to missed calls and no-shows.<br><span class="accent">Let AI catch every one, 24/7.</span></p>
+      <p class="sub">OriFlows installs missed-call text-back, no-show reminders, recall follow-up, and an AI front desk on top of the systems you already run — so every enquiry gets answered, even when your team can't pick up.</p>
       <div class="hero-ctas">
-        <a href="book.html" class="btn-primary">Get my free revenue audit →</a>
-        <a href="#proof" class="btn-secondary">See real numbers</a>
+        <a href="book.html" class="btn-primary">Book my free revenue audit →</a>
+        <a href="#proof" class="btn-secondary">See the real pilot results</a>
       </div>
       <p class="hero-microcopy">No contract lock-in · Live in 7–14 days · Built for your exact practice</p>
     </div>
@@ -743,7 +1048,14 @@
         </div>
         <div class="demo-dots"><span></span><span></span><span></span></div>
       </div>
-      <div class="demo-body" id="demoBody"></div>
+      <div class="demo-body" id="demoBody">
+        <noscript>
+          <div class="demo-event"><div class="demo-icon missed">☎</div><div class="demo-text"><span class="label">Incoming call missed</span><span class="meta">07:41 AM — front desk on another line</span></div></div>
+          <div class="demo-event"><div class="demo-icon sent">⚡</div><div class="demo-text"><span class="label">Auto text-back sent</span><span class="meta">07:41 AM — 8 seconds later</span></div></div>
+          <div class="demo-event"><div class="demo-icon reply">💬</div><div class="demo-text"><span class="label">Patient replies</span><span class="meta">07:43 AM</span></div></div>
+          <div class="demo-event"><div class="demo-icon booked">✓</div><div class="demo-text"><span class="label">Appointment booked</span><span class="meta">07:44 AM — synced to calendar automatically</span></div></div>
+        </noscript>
+      </div>
       <div class="demo-footer">
         <span class="stat" id="demoStat">⏱ response time: —</span>
         <span class="demo-restart" id="demoRestart">↻ replay</span>
@@ -751,6 +1063,18 @@
     </div>
   </div>
 </header>
+
+<!-- ===== TRUST BAR ===== -->
+<!-- Factual trust signals only — no client logos, no invented numbers. Each item is already backed up elsewhere on the page (FAQ, proof, footer). -->
+<section class="trust-bar">
+  <div class="wrap trust-bar-inner">
+    <div class="trust-item"><span class="trust-icon">🔒</span>GDPR-compliant data handling</div>
+    <div class="trust-item"><span class="trust-icon">🏗️</span>Built on GoHighLevel infrastructure</div>
+    <div class="trust-item"><span class="trust-icon">🇬🇧</span>Only UK private dental practices</div>
+    <div class="trust-item"><span class="trust-icon">🚫</span>No lock-in contract</div>
+    <div class="trust-item"><span class="trust-icon">⚡</span>Live in 7–14 days</div>
+  </div>
+</section>
 
 <!-- ===== PROBLEM ===== -->
 <section class="problem" id="problem">
@@ -796,6 +1120,40 @@
   </div>
 </section>
 
+<!-- ===== BEFORE / AFTER ===== -->
+<!-- Direct mapping of each pain point above to the specific automation that removes it. No invented numbers — same facts as the Services section, framed as a comparison. -->
+<section id="before-after">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-tag">// BEFORE & AFTER</span>
+      <h2>Same practice. Same team. Nothing falls through anymore.</h2>
+      <p>OriFlows doesn't replace your phone number, your calendar, or your front desk — it closes the specific gaps in how they currently work.</p>
+    </div>
+    <div class="compare-grid reveal">
+      <div class="compare-row compare-head">
+        <div class="compare-before">Before OriFlows</div>
+        <div class="compare-after">After OriFlows</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-before"><span class="x">×</span> Calls during lunch or peak hours go to voicemail</div>
+        <div class="compare-after"><span class="check">✓</span> Missed calls get an instant text-back with a booking link</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-before"><span class="x">×</span> No-shows leave chair-time empty with no warning</div>
+        <div class="compare-after"><span class="check">✓</span> Multi-step reminders let patients confirm or reschedule in one tap</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-before"><span class="x">×</span> New enquiries and overdue recalls sit in a spreadsheet, or nowhere</div>
+        <div class="compare-after"><span class="check">✓</span> Automatic follow-up sequences run until they book</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-before"><span class="x">×</span> After-hours calls simply aren't answered</div>
+        <div class="compare-after"><span class="check">✓</span> An AI front desk answers, checks availability, and books directly into your calendar</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== SERVICES ===== -->
 <section id="services">
   <div class="wrap">
@@ -806,34 +1164,34 @@
     </div>
 
     <div class="services-grid reveal">
-      <div class="service-card">
+      <a href="/missed-call-text-back-dental/" class="service-card">
         <div class="tag-row">
           <div class="service-icon">📞</div>
         </div>
         <h3>Missed-Call Text-Back</h3>
         <p>Any unanswered call triggers an instant SMS — so the patient is talking to your booking link within seconds, not searching for your competitor.</p>
         <div class="result-line"><span class="arrow">→</span> Recovers bookings you're currently losing in silence</div>
-      </div>
+      </a>
 
-      <div class="service-card">
+      <a href="/dental-no-show-automation/" class="service-card">
         <div class="tag-row">
           <div class="service-icon">🗓️</div>
         </div>
         <h3>No-Show & Reminder System</h3>
         <p>Multi-step SMS + email reminders before every appointment, with one-tap confirm or reschedule — so empty chairs become the exception, not the norm.</p>
         <div class="result-line"><span class="arrow">→</span> Protects chair-time revenue you've already scheduled</div>
-      </div>
+      </a>
 
-      <div class="service-card">
+      <a href="/dental-patient-follow-up/" class="service-card">
         <div class="tag-row">
           <div class="service-icon">🔁</div>
         </div>
         <h3>Lead & Recall Follow-Up</h3>
         <p>New enquiries and overdue recalls get automatic, personalised follow-up sequences until they book — without anyone on your team chasing a spreadsheet.</p>
         <div class="result-line"><span class="arrow">→</span> Turns one-time enquiries into recurring patients</div>
-      </div>
+      </a>
 
-      <div class="service-card featured">
+      <a href="/ai-receptionist-dental-practice/" class="service-card featured">
         <div class="tag-row">
           <div class="service-icon">🤖</div>
           <span class="new-badge">VOICE AI</span>
@@ -841,10 +1199,34 @@
         <h3>AI Front Desk (Voice + Chat)</h3>
         <p>An AI receptionist answers after-hours and overflow calls, checks availability, and books directly into your calendar — sounding like a person, not a phone tree.</p>
         <div class="result-line"><span class="arrow">→</span> Covers the calls your team physically can't reach</div>
-      </div>
+      </a>
+    </div>
+    <p class="reveal" style="margin-top:28px; text-align:center;">
+      <a href="/dental-clinic-automation/" style="color:var(--blue-light); font-size:0.92rem;">See the full automation system, plus lead generation &amp; patient recall →</a>
+    </p>
+  </div>
+</section>
+
+<!-- ===== INTEGRATIONS ===== -->
+<section class="integrations">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-tag">// NO NEW SOFTWARE</span>
+      <h2>It plugs into what you already run</h2>
+      <p>OriFlows sits on top of your existing phone number, calendar, and inbox. Nothing about how patients reach you changes — the automation runs quietly behind it.</p>
+    </div>
+    <div class="integration-grid reveal">
+      <div class="integration-item"><span class="integration-icon">⚡</span><span>GoHighLevel</span></div>
+      <div class="integration-item"><span class="integration-icon">☎️</span><span>Twilio</span></div>
+      <div class="integration-item"><span class="integration-icon">📅</span><span>Google Calendar</span></div>
+      <div class="integration-item"><span class="integration-icon">📧</span><span>Outlook</span></div>
+      <div class="integration-item"><span class="integration-icon">🔗</span><span>n8n</span></div>
+      <div class="integration-item"><span class="integration-icon">🧠</span><span>OpenAI</span></div>
     </div>
   </div>
 </section>
+
+<!-- Demo video section intentionally omitted until a real Loom/YouTube walkthrough exists — a visible "add your video here" placeholder would read as unfinished to real visitors. Re-add once recorded: reuse .demo-video-section / .video-frame styles below. -->
 
 <!-- ===== PROOF ===== -->
 <section class="proof" id="proof">
@@ -890,7 +1272,7 @@
 </section>
 
 <!-- ===== PROCESS ===== -->
-<section>
+<section id="how-it-works">
   <div class="wrap">
     <div class="section-head reveal">
       <span class="section-tag">// HOW IT GOES LIVE</span>
@@ -898,36 +1280,91 @@
     </div>
     <div class="process-list reveal">
       <div class="process-item">
-        <span class="process-num">01</span>
+        <div class="process-marker"><span class="process-icon">📋</span><span class="process-line"></span></div>
         <div>
+          <span class="process-num">01</span>
           <h4>Free revenue audit call</h4>
           <p>We look at your current call handling, no-show rate, and booking flow, and tell you — with numbers — what it's likely costing you. No obligation.</p>
           <span class="when">~20 MINUTES</span>
         </div>
       </div>
       <div class="process-item">
-        <span class="process-num">02</span>
+        <div class="process-marker"><span class="process-icon">🔌</span><span class="process-line"></span></div>
         <div>
+          <span class="process-num">02</span>
           <h4>System mapped to your practice</h4>
           <p>We connect to your existing phone number, calendar, and patient management workflow. Nothing about how patients reach you changes — what happens after does.</p>
           <span class="when">2–5 DAYS</span>
         </div>
       </div>
       <div class="process-item">
-        <span class="process-num">03</span>
+        <div class="process-marker"><span class="process-icon">✅</span><span class="process-line"></span></div>
         <div>
+          <span class="process-num">03</span>
           <h4>Live, tested, handed over</h4>
           <p>We test every automation against real scenarios before it touches a real patient, then walk your team through exactly what's running.</p>
           <span class="when">DAY 7–14</span>
         </div>
       </div>
       <div class="process-item">
-        <span class="process-num">04</span>
+        <div class="process-marker"><span class="process-icon">📈</span></div>
         <div>
+          <span class="process-num">04</span>
           <h4>Monitored and improved</h4>
           <p>Monthly reporting on what the system actually caught — missed calls recovered, reminders sent, no-shows prevented — so it's never a black box.</p>
           <span class="when">ONGOING</span>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ROI CALCULATOR ===== -->
+<!-- Fully transparent, user-driven math. No fixed conversion/recovery stat is asserted as fact — the recovery-rate slider is a clearly labelled, editable assumption, and the formula is shown below the result. -->
+<section class="roi" id="roi">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-tag">// YOUR NUMBERS, NOT AVERAGES</span>
+      <h2>What are missed calls costing your practice?</h2>
+      <p>Enter your own figures. This is simple arithmetic on your numbers, not a guarantee — it's here to give you a starting point before the audit call.</p>
+    </div>
+    <div class="roi-card reveal">
+      <div class="roi-inputs">
+        <label>Missed calls per week
+          <input type="number" id="roiMissed" value="15" min="0">
+        </label>
+        <label>Average patient value (£)
+          <input type="number" id="roiValue" value="150" min="0">
+        </label>
+        <label>Estimated % you could recover: <span id="roiRateLabel">30%</span>
+          <input type="range" id="roiRate" value="30" min="0" max="100">
+        </label>
+      </div>
+      <div class="roi-output">
+        <span class="roi-figure" id="roiResult">£0</span>
+        <span class="roi-figure-label">estimated recoverable revenue per month</span>
+        <span class="roi-formula" id="roiFormula"></span>
+      </div>
+    </div>
+    <p class="roi-disclaimer reveal">This is illustrative maths using the numbers you enter, not a published statistic or a promise of results. Your actual figures come from the free audit call.</p>
+    <div class="reveal" style="text-align:center;margin-top:32px;">
+      <a href="book.html" class="btn-primary">Get my exact numbers on a call →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOUNDER ===== -->
+<section class="founder">
+  <div class="wrap" style="max-width:760px;">
+    <div class="section-head reveal">
+      <span class="section-tag">// WHO'S BEHIND THIS</span>
+      <h2>You're working directly with the person who builds it</h2>
+    </div>
+    <div class="founder-card reveal">
+      <div class="founder-avatar">TZ</div>
+      <div class="founder-bio">
+        <h4>Tazul Islam, Founder of OriFlows</h4>
+        <p>I built OriFlows to be exactly what UK private dental practices need and nothing they don't — no account managers, no reseller layers. I personally handle the setup, the automation logic, and the ongoing monitoring on GoHighLevel and n8n, so when something needs adjusting, you're talking to the person who actually built it.</p>
       </div>
     </div>
   </div>
@@ -989,15 +1426,20 @@
       </div>
       <div class="footer-links">
         <div class="footer-col">
-          <h5>Site</h5>
-          <a href="#problem">The Problem</a>
-          <a href="#services">Services</a>
-          <a href="#faq">FAQ</a>
+          <h5>Solutions</h5>
+          <a href="/dental-clinic-automation/">Dental Clinic Automation</a>
+          <a href="/dental-lead-generation/">Lead Generation</a>
+          <a href="/ai-receptionist-dental-practice/">AI Receptionist</a>
+          <a href="/missed-call-text-back-dental/">Missed Call Recovery</a>
+          <a href="/dental-patient-follow-up/">Patient Follow-Up</a>
+          <a href="/dental-no-show-automation/">No-Show Automation</a>
+          <a href="/dental-recall-automation/">Patient Recall</a>
         </div>
         <div class="footer-col">
-          <h5>Get Started</h5>
-          <a href="book.html">Book free audit</a>
-          <a href="privacy.html">Privacy Policy</a>
+          <h5>Site</h5>
+          <a href="/resources/">Resources</a>
+          <a href="/free-dental-automation-audit/">Free Audit</a>
+          <a href="/privacy.html">Privacy Policy</a>
         </div>
         <div class="footer-col">
           <h5>Contact</h5>
@@ -1072,6 +1514,23 @@ function runDemo(){
 
 runDemo();
 document.getElementById('demoRestart').addEventListener('click', runDemo);
+
+// ROI calculator — pure arithmetic on the visitor's own inputs, formula shown for transparency
+function updateRoi(){
+  const missed = parseFloat(document.getElementById('roiMissed').value) || 0;
+  const value = parseFloat(document.getElementById('roiValue').value) || 0;
+  const rate = parseFloat(document.getElementById('roiRate').value) || 0;
+  document.getElementById('roiRateLabel').textContent = rate + '%';
+  const monthlyMissed = missed * 4.33;
+  const recovered = monthlyMissed * (rate/100) * value;
+  document.getElementById('roiResult').textContent = '£' + Math.round(recovered).toLocaleString();
+  document.getElementById('roiFormula').textContent =
+    `${missed} missed calls/week × 4.33 weeks × ${rate}% recovered × £${value} = £${Math.round(recovered).toLocaleString()}/month`;
+}
+['roiMissed','roiValue','roiRate'].forEach(id=>{
+  document.getElementById(id).addEventListener('input', updateRoi);
+});
+updateRoi();
 </script>
 
 </body>
