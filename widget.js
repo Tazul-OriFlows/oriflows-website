@@ -228,7 +228,7 @@
   function buildUI() {
     const bubble = document.createElement("div");
     bubble.id = "of-chat-bubble";
-    bubble.innerHTML = `<svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>`;
+    bubble.innerHTML = `<svg viewBox="0 0 24 24"><path d="M12 2a1 1 0 0 1 1 1v1.07A7.002 7.002 0 0 1 19 11v1h.5a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5H19v.5A2.5 2.5 0 0 1 16.5 21h-9A2.5 2.5 0 0 1 5 18.5V18h-.5A1.5 1.5 0 0 1 3 16.5v-3A1.5 1.5 0 0 1 4.5 12H5v-1a7.002 7.002 0 0 1 6-6.93V3a1 1 0 0 1 1-1zm-3.5 9a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm7 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-8 6.5v.5c0 .55.45 1 1 1h9c.55 0 1-.45 1-1v-.5H7.5z"/></svg>`;
 
     const win = document.createElement("div");
     win.id = "of-chat-window";
@@ -305,7 +305,7 @@
         display: flex; flex-direction: column; gap: 10px;
       }
       .of-msg { max-width: 82%; padding: 9px 13px; border-radius: 14px; font-size: 14px; line-height: 1.4; word-wrap: break-word; }
-      .of-msg.of-bot { background: #fff; border: 1px solid #e5e7eb; align-self: flex-start; border-bottom-left-radius: 4px; }
+      .of-msg.of-bot { background: #fff; color: #1f2937; border: 1px solid #e5e7eb; align-self: flex-start; border-bottom-left-radius: 4px; }
       .of-msg.of-user { background: ${ACCENT_COLOR}; color: white; align-self: flex-end; border-bottom-right-radius: 4px; }
 
       .of-typing-dots { display: flex; gap: 4px; padding: 12px 14px; align-items: center; }
@@ -321,9 +321,10 @@
         background: #fff; border: 1px solid #e5e7eb; border-radius: 12px;
         padding: 12px; display: flex; flex-direction: column; gap: 8px; align-self: stretch;
       }
-      .of-lead-title { font-size: 13px; font-weight: 600; color: #333; }
+      .of-lead-title { font-size: 13px; font-weight: 600; color: #1f2937; }
       .of-lead-input {
         border: 1px solid #ddd; border-radius: 8px; padding: 8px 10px; font-size: 13px; outline: none;
+        color: #1f2937; background: #fff;
       }
       .of-lead-input:focus { border-color: ${ACCENT_COLOR}; }
       .of-lead-actions { display: flex; gap: 8px; margin-top: 4px; }
@@ -347,6 +348,7 @@
       #of-chat-input {
         width: 100%; box-sizing: border-box; border: 1px solid #ddd; border-radius: 20px;
         padding: 9px 40px 9px 14px; font-size: 14px; outline: none;
+        color: #1f2937; background: #fff;
       }
       #of-chat-input:focus { border-color: ${ACCENT_COLOR}; }
       #of-char-count { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); font-size: 11px; color: #999; }
