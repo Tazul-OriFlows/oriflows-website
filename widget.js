@@ -1,5 +1,5 @@
 /**
- * OriFlows Chat Widget — Frontend (PRODUCTION v2)
+ * OriFlows Chat Widget — Frontend 
  * -------------------------------------------------
  * Add before </body> on every page:
  *   <script src="widget-v2.js" defer></script>
