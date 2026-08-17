@@ -1,5 +1,5 @@
 /**
- * OriFlows Chat Widget — Frontend 
+ * OriFlows Chat Widget — Frontend (PRODUCTION v2)
  * -------------------------------------------------
  * Add before </body> on every page:
  *   <script src="widget-v2.js" defer></script>
@@ -13,7 +13,8 @@
   // ⚠️ CHANGE THIS to your deployed Cloudflare Worker URL
   const WORKER_URL = "https://oriflows-chatbot.oriflows.workers.dev";
 
-  const BRAND_NAME = "OriFlows Assistant";
+  const BRAND_NAME = "AI Receptionist";
+  const BRAND_STATUS = "Online 24/7";
   const WELCOME_MESSAGE = "Hi! 👋 I'm here to help with any questions about OriFlows. What would you like to know?";
   const ACCENT_COLOR = "#2563eb";
   const MAX_MESSAGE_LENGTH = 500;
@@ -237,11 +238,15 @@ const BUBBLE_IMAGE = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAGQCAYA
 
     const win = document.createElement("div");
     win.id = "of-chat-window";
+    win.setAttribute("aria-label", "AI Receptionist chat");
     win.innerHTML = `
       <div id="of-chat-header">
         <div class="of-header-left">
-          <span class="of-status-dot"></span>
-          <span>${BRAND_NAME}</span>
+          <img class="of-header-avatar" src="${BUBBLE_IMAGE}" alt="AI Receptionist" />
+          <div class="of-header-info">
+            <div class="of-header-name">${BRAND_NAME}</div>
+            <div class="of-header-status"><span class="of-status-dot"></span>${BRAND_STATUS}</div>
+          </div>
         </div>
         <span id="of-chat-close">&times;</span>
       </div>
@@ -300,11 +305,22 @@ const BUBBLE_IMAGE = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAGQCAYA
       #of-chat-window.of-open { display: flex; }
 
       #of-chat-header {
-        background: ${ACCENT_COLOR}; color: white; padding: 14px 16px;
-        font-weight: 600; font-size: 15px; display: flex; justify-content: space-between; align-items: center;
+        background: ${ACCENT_COLOR}; color: white; padding: 12px 16px;
+        font-size: 15px; display: flex; justify-content: space-between; align-items: center;
       }
-      .of-header-left { display: flex; align-items: center; gap: 8px; }
-      .of-status-dot { width: 8px; height: 8px; border-radius: 50%; background: #4ade80; display: inline-block; }
+      .of-header-left { display: flex; align-items: center; gap: 10px; min-width: 0; }
+      .of-header-avatar {
+        width: 38px; height: 38px; border-radius: 50%; object-fit: cover;
+        object-position: center top; background: #fff; flex: 0 0 auto;
+        border: 2px solid rgba(255,255,255,0.85);
+      }
+      .of-header-info { min-width: 0; }
+      .of-header-name { font-weight: 700; font-size: 14px; line-height: 1.2; }
+      .of-header-status {
+        margin-top: 3px; font-size: 11px; font-weight: 500;
+        opacity: 0.95; display: flex; align-items: center; gap: 5px;
+      }
+      .of-status-dot { width: 7px; height: 7px; border-radius: 50%; background: #4ade80; display: inline-block; flex: 0 0 auto; }
       #of-chat-close { cursor: pointer; font-size: 20px; line-height: 1; opacity: 0.9; }
 
       #of-chat-messages {
