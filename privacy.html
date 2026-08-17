@@ -71,7 +71,18 @@
   }
 
   h1{font-size:clamp(1.9rem, 3.6vw, 2.4rem); margin-bottom:10px;}
-  .updated{color:var(--muted-2); font-size:0.85rem; margin-bottom:40px;}
+  .updated{color:var(--muted-2); font-size:0.85rem; margin-bottom:18px;}
+
+  .legal-links{
+    display:flex; flex-wrap:wrap; gap:6px 10px;
+    font-size:0.85rem; color:var(--muted-2);
+    margin-bottom:40px; padding-bottom:24px;
+    border-bottom:1px solid var(--border);
+  }
+  .legal-links a{color:var(--muted);}
+  .legal-links a:hover{color:var(--blue-light);}
+  .legal-links .current{color:var(--text); font-weight:600;}
+  .legal-links span.sep{color:var(--border);}
 
   h2{font-size:1.25rem; margin-top:38px; margin-bottom:14px; color:var(--blue-light);}
   p{color:var(--muted); font-size:0.96rem; margin-bottom:14px;}
@@ -93,6 +104,7 @@
   footer{border-top:1px solid var(--border); padding:32px 0; margin-top:60px;}
   .footer-inner{display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:0.82rem; color:var(--muted-2);}
   .footer-inner a{color:var(--muted-2);}
+  .footer-legal-links{display:flex; gap:14px; flex-wrap:wrap;}
 
   @media (max-width:600px){
     main{padding:120px 0 60px;}
@@ -113,6 +125,14 @@
     <span class="eyebrow">// LEGAL</span>
     <h1>Privacy Policy</h1>
     <p class="updated">Last updated: 1 July 2026</p>
+
+    <nav class="legal-links" aria-label="Legal pages">
+      <span class="current">Privacy Policy</span>
+      <span class="sep">/</span>
+      <a href="terms.html">Terms & Conditions</a>
+      <span class="sep">/</span>
+      <a href="cookies.html">Cookie Policy</a>
+    </nav>
 
     <p>This policy explains how OriFlows ("OriFlows", "we", "us") collects, uses, and protects personal data when you visit this website, book an audit call, or use the automation services we provide to dental practices. We are committed to handling data in line with the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.</p>
 
@@ -165,7 +185,7 @@
     <p>To exercise any of these rights, contact us directly. If you are a patient of a practice using our services, you can also contact that practice, as they are the data controller for your information.</p>
 
     <h2>9. Cookies</h2>
-    <p>This website uses minimal cookies/local scripts required for core functionality (e.g. the booking calendar embed). We do not currently use third-party advertising or tracking cookies.</p>
+    <p>This website uses minimal cookies/local scripts required for core functionality (e.g. the booking calendar embed). We do not currently use third-party advertising or tracking cookies. Full details of the cookies we use and how to manage them are set out in our <a href="cookies.html">Cookie Policy</a>.</p>
 
     <h2>10. Changes to this policy</h2>
     <p>We may update this policy from time to time. The "last updated" date at the top of this page will reflect the most recent revision.</p>
@@ -178,7 +198,11 @@
 <footer>
   <div class="wrap footer-inner">
     <span>© <span id="year"></span> OriFlows</span>
-    <a href="index.html">← Back to home</a>
+    <div class="footer-legal-links">
+      <a href="terms.html">Terms & Conditions</a>
+      <a href="cookies.html">Cookie Policy</a>
+      <a href="index.html">← Back to home</a>
+    </div>
   </div>
 </footer>
 

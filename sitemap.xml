@@ -9,6 +9,10 @@
   <url><loc>https://oriflows.com/dental-patient-follow-up/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://oriflows.com/dental-no-show-automation/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://oriflows.com/dental-recall-automation/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://oriflows.com/plumbing/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://oriflows.com/plumbing-missed-call-recovery/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://oriflows.com/plumbing-lead-follow-up/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://oriflows.com/ai-receptionist-plumbing/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://oriflows.com/resources/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://oriflows.com/resources/dental-practice-automation-guide/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://oriflows.com/resources/ai-receptionist-for-dentists/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
@@ -16,4 +20,7 @@
   <url><loc>https://oriflows.com/resources/dental-lead-follow-up/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://oriflows.com/resources/dental-appointment-automation/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://oriflows.com/resources/reduce-dental-no-shows/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://oriflows.com/privacy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://oriflows.com/terms.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://oriflows.com/cookies.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>
