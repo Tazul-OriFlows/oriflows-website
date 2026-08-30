@@ -1,1 +1,1586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Done-For-You Wedding Video Editing Service | OriFlows</title>
+<meta name="description" content="OriFlows offers a done-for-you wedding video editing service for videographers — professional edits delivered on schedule, so you can spend more time filming.">
+<link rel="canonical" href="https://oriflows.com/wedding-video-editing/">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="OriFlows">
+<meta property="og:title" content="OriFlows — Done-For-You Wedding Video Editing">
+<meta property="og:description" content="Hand off your edit backlog to a managed editing service built for wedding videographers. Consistent quality, predictable turnaround.">
+<meta property="og:url" content="https://oriflows.com/wedding-video-editing/">
+<meta property="og:locale" content="en_GB">
+<meta property="og:image" content="https://oriflows.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="OriFlows — Done-For-You Wedding Video Editing">
+<meta name="twitter:description" content="Hand off your edit backlog to a managed editing service built for wedding videographers.">
+<meta name="twitter:image" content="https://oriflows.com/assets/og-image.png">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Wedding video editing service",
+  "provider": { "@type": "Organization", "name": "OriFlows", "url": "https://oriflows.com/" },
+  "areaServed": "GB",
+  "description": "A managed, done-for-you video editing service for wedding videographers, handling the edit backlog with consistent quality and predictable turnaround."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"What footage do you need from me?","acceptedAnswer":{"@type":"Answer","text":"Your raw footage, any shot notes or must-have moments, and a reference to your existing edit style — we match it, not replace it."}},
+    {"@type":"Question","name":"How long does a typical edit take?","acceptedAnswer":{"@type":"Answer","text":"Turnaround depends on package and footage volume, but timelines are agreed upfront and tracked, so you always know when to expect delivery."}},
+    {"@type":"Question","name":"Will the edit match my studio's style?","acceptedAnswer":{"@type":"Answer","text":"Yes. We start from your existing work as a style reference and go through a revision round to make sure it fits your brand before final delivery."}},
+    {"@type":"Question","name":"Is there a contract?","acceptedAnswer":{"@type":"Answer","text":"No lock-in contract. You can send one wedding or a season's worth, and stop any time."}},
+    {"@type":"Question","name":"How do I send footage and get files back?","acceptedAnswer":{"@type":"Answer","text":"Through a simple upload link and project tracker — no new complicated software to learn on your end."}}
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0A0E1A;
+    --surface:#0F1729;
+    --surface-2:#141D33;
+    --border:#1E293B;
+    --text:#F8FAFC;
+    --muted:#94A3B8;
+    --muted-2:#64748B;
+    --blue:#2563EB;
+    --blue-light:#38BDF8;
+    --green:#10B981;
+    --amber:#F59E0B;
+    --red:#EF4444;
+    --grad: linear-gradient(135deg, var(--blue) 0%, var(--blue-light) 100%);
+  }
 
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+
+  h1,h2,h3,h4{
+    font-family:'Space Grotesk',sans-serif;
+    line-height:1.15;
+    letter-spacing:-0.01em;
+  }
+
+  .mono{
+    font-family:'JetBrains Mono',monospace;
+  }
+
+  a{color:inherit;text-decoration:none;}
+
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+  }
+
+  /* ===== NAV ===== */
+  nav{
+    position:fixed;
+    top:0;left:0;right:0;
+    z-index:100;
+    background:rgba(10,14,26,0.85);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border);
+  }
+  .nav-inner{
+    max-width:1180px;
+    margin:0 auto;
+    padding:16px 24px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .logo{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    font-size:1.25rem;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .logo-dot{
+    width:8px;height:8px;border-radius:50%;
+    background:var(--green);
+    box-shadow:0 0 0 0 rgba(16,185,129,0.6);
+    animation:pulse 2s infinite;
+  }
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(16,185,129,0.5);}
+    70%{box-shadow:0 0 0 6px rgba(16,185,129,0);}
+    100%{box-shadow:0 0 0 0 rgba(16,185,129,0);}
+  }
+  .nav-links{
+    display:flex;
+    gap:32px;
+    font-size:0.9rem;
+    color:var(--muted);
+  }
+  .nav-links a:hover{color:var(--text);}
+  .nav-cta{
+    background:var(--grad);
+    color:#fff;
+    padding:10px 20px;
+    border-radius:8px;
+    font-weight:600;
+    font-size:0.88rem;
+  }
+  .nav-mobile-hide{display:flex;}
+  @media (max-width:760px){
+    .nav-mobile-hide{display:none;}
+  }
+
+  /* ===== HERO ===== */
+  .hero{
+    padding:160px 0 100px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:'';
+    position:absolute;
+    top:-200px;left:50%;
+    transform:translateX(-50%);
+    width:900px;height:600px;
+    background:radial-gradient(circle, rgba(37,99,235,0.18) 0%, transparent 70%);
+    pointer-events:none;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:64px;
+    align-items:center;
+    position:relative;
+    z-index:1;
+  }
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr; gap:48px;}
+    .hero{padding:130px 0 60px;}
+  }
+
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--surface);
+    border:1px solid var(--border);
+    padding:6px 14px;
+    border-radius:100px;
+    font-size:0.78rem;
+    color:var(--blue-light);
+    font-family:'JetBrains Mono',monospace;
+    margin-bottom:24px;
+  }
+
+  .hero h1{
+    font-size:clamp(1.7rem, 3.2vw, 2.5rem);
+    font-weight:700;
+    margin-bottom:14px;
+  }
+  .hero-subhead{
+    font-size:clamp(1.5rem, 3.4vw, 2.5rem);
+    font-weight:700;
+    line-height:1.25;
+    margin-bottom:22px;
+  }
+  .hero-subhead .accent{
+    background:var(--grad);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+
+  .hero p.sub{
+    font-size:1.13rem;
+    color:var(--muted);
+    max-width:540px;
+    margin-bottom:32px;
+  }
+
+  .hero-ctas{
+    display:flex;
+    gap:14px;
+    margin-bottom:36px;
+    flex-wrap:wrap;
+  }
+  .btn-primary{
+    background:var(--grad);
+    color:#fff;
+    padding:15px 28px;
+    border-radius:10px;
+    font-weight:600;
+    font-size:0.96rem;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    box-shadow:0 8px 24px -8px rgba(37,99,235,0.5);
+    transition:transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 12px 28px -8px rgba(37,99,235,0.6);}
+  .btn-secondary{
+    background:transparent;
+    color:var(--text);
+    padding:15px 28px;
+    border-radius:10px;
+    font-weight:600;
+    font-size:0.96rem;
+    border:1px solid var(--border);
+    transition:border-color 0.15s ease, background 0.15s ease;
+  }
+  .btn-secondary:hover{border-color:var(--blue-light); background:var(--surface);}
+
+  .hero-microcopy{
+    font-size:0.82rem;
+    color:var(--muted-2);
+  }
+
+  /* ===== HERO DEMO (signature element) ===== */
+  .demo-card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:0;
+    overflow:hidden;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,0.5);
+  }
+  .demo-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 18px;
+    border-bottom:1px solid var(--border);
+    background:var(--surface-2);
+  }
+  .demo-header-left{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:0.8rem;
+    color:var(--muted);
+    font-family:'JetBrains Mono',monospace;
+  }
+  .demo-dots{display:flex; gap:5px;}
+  .demo-dots span{width:8px;height:8px;border-radius:50%;background:var(--border);}
+  .demo-body{
+    padding:20px;
+    min-height:340px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .demo-event{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    opacity:0;
+    animation:fadeUp 0.5s ease forwards;
+  }
+  @keyframes fadeUp{
+    from{opacity:0; transform:translateY(8px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+  .demo-icon{
+    width:30px;height:30px;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    font-size:0.85rem;
+    margin-top:2px;
+  }
+  .demo-icon.missed{background:rgba(239,68,68,0.15); color:var(--red);}
+  .demo-icon.sent{background:rgba(37,99,235,0.15); color:var(--blue-light);}
+  .demo-icon.reply{background:rgba(16,185,129,0.15); color:var(--green);}
+  .demo-icon.booked{background:rgba(245,158,11,0.15); color:var(--amber);}
+  .demo-text{font-size:0.86rem;}
+  .demo-text .label{font-weight:600; display:block; margin-bottom:2px;}
+  .demo-text .meta{color:var(--muted-2); font-size:0.76rem; font-family:'JetBrains Mono',monospace;}
+  .demo-bubble{
+    background:var(--surface-2);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:10px 13px;
+    font-size:0.82rem;
+    color:var(--muted);
+    margin-top:6px;
+    max-width:88%;
+  }
+  .demo-footer{
+    border-top:1px solid var(--border);
+    padding:14px 18px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:var(--surface-2);
+  }
+  .demo-footer .stat{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.78rem;
+    color:var(--green);
+  }
+  .demo-restart{
+    font-size:0.75rem;
+    color:var(--muted-2);
+    cursor:pointer;
+    border:1px solid var(--border);
+    padding:5px 10px;
+    border-radius:6px;
+  }
+  .demo-restart:hover{color:var(--text); border-color:var(--muted-2);}
+
+  /* ===== TRUST BAR ===== */
+  .trust-bar{
+    padding:22px 0;
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+    background:var(--surface);
+  }
+  .trust-bar-inner{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:28px 40px;
+  }
+  .trust-item{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:0.82rem;
+    color:var(--muted);
+    font-family:'JetBrains Mono',monospace;
+    white-space:nowrap;
+  }
+  .trust-icon{font-size:0.95rem;}
+  @media (max-width:700px){
+    .trust-bar-inner{gap:16px 24px;}
+    .trust-item{font-size:0.76rem;}
+  }
+
+  /* ===== SECTION SHARED ===== */
+  section{
+    padding:90px 0;
+    position:relative;
+  }
+  .section-tag{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.78rem;
+    color:var(--blue-light);
+    margin-bottom:14px;
+    display:block;
+  }
+  .section-head{
+    max-width:680px;
+    margin-bottom:56px;
+  }
+  .section-head h2{
+    font-size:clamp(1.7rem, 3vw, 2.4rem);
+    margin-bottom:16px;
+  }
+  .section-head p{
+    color:var(--muted);
+    font-size:1.05rem;
+  }
+  .divider{
+    height:1px;
+    background:var(--border);
+    border:none;
+  }
+
+  /* ===== PROBLEM SECTION ===== */
+  .problem{
+    background:var(--surface);
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+  }
+  .problem-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:var(--border);
+    border:1px solid var(--border);
+    border-radius:14px;
+    overflow:hidden;
+  }
+  @media (max-width:760px){
+    .problem-grid{grid-template-columns:1fr;}
+  }
+  .problem-cell{
+    background:var(--bg);
+    padding:32px 28px;
+  }
+  .problem-cell .big-stat{
+    font-family:'JetBrains Mono',monospace;
+    font-size:2.4rem;
+    font-weight:600;
+    color:var(--red);
+    margin-bottom:10px;
+    display:block;
+  }
+  .problem-cell h4{
+    font-size:1.02rem;
+    margin-bottom:8px;
+    font-weight:600;
+  }
+  .problem-cell p{
+    color:var(--muted);
+    font-size:0.92rem;
+  }
+  .problem-cell .src{
+    display:block;
+    margin-top:12px;
+    font-size:0.72rem;
+    color:var(--muted-2);
+    font-family:'JetBrains Mono',monospace;
+  }
+
+  .pain-mirror{
+    margin-top:48px;
+    background:var(--bg);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:32px;
+  }
+  .pain-mirror h4{
+    font-size:1.1rem;
+    margin-bottom:18px;
+    color:var(--text);
+  }
+  .pain-list{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px 28px;
+  }
+  @media (max-width:700px){ .pain-list{grid-template-columns:1fr;} }
+  .pain-item{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+    font-size:0.93rem;
+    color:var(--muted);
+  }
+  .pain-item .x{
+    color:var(--red);
+    font-family:'JetBrains Mono',monospace;
+    flex-shrink:0;
+  }
+
+  /* ===== BEFORE/AFTER ===== */
+  .compare-grid{
+    border:1px solid var(--border);
+    border-radius:14px;
+    overflow:hidden;
+  }
+  .compare-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+  }
+  .compare-row:not(:last-child){border-bottom:1px solid var(--border);}
+  .compare-before,.compare-after{
+    padding:20px 26px;
+    font-size:0.92rem;
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+  }
+  .compare-before{background:var(--surface); color:var(--muted); border-right:1px solid var(--border);}
+  .compare-after{background:rgba(16,185,129,0.06); color:var(--text);}
+  .compare-before .x{color:var(--red); flex-shrink:0;}
+  .compare-after .check{color:var(--green); flex-shrink:0;}
+  .compare-head .compare-before,.compare-head .compare-after{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.78rem;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    color:var(--muted-2);
+    background:var(--bg);
+    padding:14px 26px;
+  }
+  @media (max-width:700px){
+    .compare-row{grid-template-columns:1fr;}
+    .compare-before{border-right:none; border-bottom:1px solid var(--border);}
+  }
+
+  /* ===== SERVICES ===== */
+  .services-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+  }
+  @media (max-width:900px){ .services-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:620px){ .services-grid{grid-template-columns:1fr;} }
+
+  .service-card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:30px 26px;
+    transition:border-color 0.2s ease, transform 0.2s ease;
+    position:relative;
+  }
+  .service-card:hover{
+    border-color:var(--blue);
+    transform:translateY(-3px);
+  }
+  .service-card.featured{
+    border-color:var(--blue);
+    background:linear-gradient(160deg, rgba(37,99,235,0.1), var(--surface) 60%);
+  }
+  .service-card .tag-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    margin-bottom:18px;
+  }
+  .service-icon{
+    width:42px;height:42px;
+    border-radius:10px;
+    background:var(--surface-2);
+    border:1px solid var(--border);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.2rem;
+  }
+  .service-card.featured .service-icon{
+    background:var(--grad);
+    border:none;
+  }
+  .new-badge{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.68rem;
+    background:rgba(16,185,129,0.15);
+    color:var(--green);
+    padding:4px 9px;
+    border-radius:6px;
+    height:fit-content;
+  }
+  .service-card h3{
+    font-size:1.15rem;
+    margin-bottom:10px;
+  }
+  .service-card p{
+    color:var(--muted);
+    font-size:0.92rem;
+    margin-bottom:18px;
+  }
+  .result-line{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:0.85rem;
+    color:var(--green);
+    font-weight:600;
+    padding-top:14px;
+    border-top:1px solid var(--border);
+  }
+  .result-line .arrow{font-family:'JetBrains Mono',monospace;}
+
+  /* ===== INTEGRATIONS ===== */
+  .integration-grid{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:14px;
+  }
+  @media (max-width:900px){ .integration-grid{grid-template-columns:repeat(3,1fr);} }
+  @media (max-width:480px){ .integration-grid{grid-template-columns:repeat(2,1fr);} }
+  .integration-item{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:22px 12px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+    font-size:0.85rem;
+    color:var(--muted);
+    text-align:center;
+    transition:border-color 0.2s ease;
+  }
+  .integration-item:hover{border-color:var(--blue);}
+  .integration-icon{font-size:1.5rem;}
+
+  /* ===== DEMO VIDEO ===== */
+  .video-frame{
+    border-radius:14px;
+    overflow:hidden;
+    border:1px solid var(--border);
+    background:var(--surface);
+  }
+  .video-frame iframe{width:100%; aspect-ratio:16/9; display:block; border:0;}
+  .video-placeholder{
+    aspect-ratio:16/9;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
+    background:radial-gradient(circle, rgba(37,99,235,0.12) 0%, var(--surface) 70%);
+    color:var(--muted);
+  }
+  .play-btn{
+    width:64px;height:64px;
+    border-radius:50%;
+    background:var(--grad);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.3rem;
+    box-shadow:0 8px 24px -8px rgba(37,99,235,0.5);
+  }
+  .video-label{font-size:0.85rem; font-family:'JetBrains Mono',monospace;}
+  .video-placeholder{width:100%; border:0; cursor:pointer; font-family:inherit;}
+  .video-placeholder:focus-visible{outline:2px solid var(--blue-light); outline-offset:4px;}
+  .play-btn{transition:transform 0.15s ease;}
+  .video-placeholder:hover .play-btn{transform:scale(1.06);}
+
+  /* ===== PROOF SECTION ===== */
+  .proof{
+    background:var(--surface);
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+  }
+  .proof-banner{
+    background:var(--bg);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:24px 28px;
+    margin-bottom:40px;
+    display:flex;
+    align-items:center;
+    gap:16px;
+  }
+  .proof-banner .dot{
+    width:10px;height:10px;border-radius:50%;
+    background:var(--amber);
+    flex-shrink:0;
+    box-shadow:0 0 0 0 rgba(245,158,11,0.5);
+    animation:pulse2 2s infinite;
+  }
+  @keyframes pulse2{
+    0%{box-shadow:0 0 0 0 rgba(245,158,11,0.5);}
+    70%{box-shadow:0 0 0 6px rgba(245,158,11,0);}
+    100%{box-shadow:0 0 0 0 rgba(245,158,11,0);}
+  }
+  .proof-banner p{font-size:0.93rem; color:var(--muted); margin:0;}
+  .proof-banner strong{color:var(--text);}
+
+  .case-card{
+    background:var(--bg);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:32px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:32px;
+  }
+  @media (max-width:760px){ .case-card{grid-template-columns:1fr;} }
+  .case-meta{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .case-meta .clinic{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:600;
+    font-size:1.05rem;
+  }
+  .case-meta .loc{
+    color:var(--muted-2);
+    font-size:0.85rem;
+    font-family:'JetBrains Mono',monospace;
+  }
+  .case-meta p{
+    color:var(--muted);
+    font-size:0.92rem;
+  }
+  .case-stats{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+  }
+  .case-stat{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:18px;
+  }
+  .case-stat .num{
+    font-family:'JetBrains Mono',monospace;
+    font-size:1.6rem;
+    font-weight:600;
+    color:var(--blue-light);
+    display:block;
+  }
+  .case-stat .lbl{
+    font-size:0.78rem;
+    color:var(--muted);
+    margin-top:4px;
+  }
+
+  /* ===== PROCESS ===== */
+  .process-list{
+    display:flex;
+    flex-direction:column;
+  }
+  .process-item{
+    display:grid;
+    grid-template-columns:56px 1fr;
+    gap:24px;
+    padding:28px 0 28px 4px;
+  }
+  .process-item:first-child{border-top:1px solid var(--border);}
+  .process-marker{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+  .process-icon{
+    width:44px;height:44px;
+    border-radius:50%;
+    background:var(--surface);
+    border:1px solid var(--border);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.15rem;
+    flex-shrink:0;
+  }
+  .process-line{
+    width:1px;
+    flex:1;
+    background:var(--border);
+    margin-top:6px;
+  }
+  .process-num{
+    font-family:'JetBrains Mono',monospace;
+    color:var(--blue-light);
+    font-size:0.82rem;
+    display:block;
+    margin-bottom:6px;
+  }
+  .process-item h4{font-size:1.1rem; margin-bottom:8px;}
+  .process-item p{color:var(--muted); font-size:0.92rem; max-width:560px;}
+  .process-item .when{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.75rem;
+    color:var(--muted-2);
+    margin-top:8px;
+    display:block;
+  }
+
+  /* ===== ROI CALCULATOR ===== */
+  .roi-card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:36px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:36px;
+    align-items:center;
+  }
+  @media (max-width:760px){ .roi-card{grid-template-columns:1fr; gap:28px;} }
+  .roi-inputs{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+  }
+  .roi-inputs label{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    font-size:0.85rem;
+    color:var(--muted);
+    font-family:'JetBrains Mono',monospace;
+  }
+  .roi-inputs input[type="number"]{
+    background:var(--bg);
+    border:1px solid var(--border);
+    color:var(--text);
+    padding:10px 14px;
+    border-radius:8px;
+    font-size:1rem;
+    font-family:'Inter',sans-serif;
+  }
+  .roi-inputs input[type="range"]{
+    accent-color:var(--blue);
+  }
+  .roi-output{
+    background:var(--bg);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:28px;
+    text-align:center;
+  }
+  .roi-figure{
+    font-family:'JetBrains Mono',monospace;
+    font-size:2.6rem;
+    font-weight:600;
+    color:var(--green);
+    display:block;
+  }
+  .roi-figure-label{color:var(--muted); font-size:0.85rem; display:block; margin-top:6px;}
+  .roi-formula{color:var(--muted-2); font-size:0.72rem; display:block; margin-top:14px; font-family:'JetBrains Mono',monospace;}
+  .roi-disclaimer{color:var(--muted-2); font-size:0.8rem; text-align:center; margin-top:20px;}
+
+  /* ===== FOUNDER ===== */
+  .founder-card{
+    display:flex;
+    gap:24px;
+    align-items:flex-start;
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:32px;
+  }
+  @media (max-width:600px){ .founder-card{flex-direction:column; align-items:center; text-align:center;} }
+  .founder-avatar{
+    width:88px;height:88px;
+    border-radius:50%;
+    background:var(--grad);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    font-size:1.15rem;
+    flex-shrink:0;
+    object-fit:cover;
+    border:2px solid var(--border);
+    box-shadow:0 0 0 4px rgba(37,99,235,0.12), 0 10px 28px -10px rgba(37,99,235,0.45);
+  }
+  .founder-bio h4{font-size:1.05rem; margin-bottom:10px;}
+  .founder-bio p{color:var(--muted); font-size:0.93rem;}
+  .founder-cta{margin-top:18px;}
+  .founder-cta .btn-secondary{padding:12px 22px; font-size:0.9rem;}
+
+  /* ===== FAQ ===== */
+  .faq-item{
+    border-bottom:1px solid var(--border);
+    padding:22px 0;
+  }
+  .faq-q{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    cursor:pointer;
+    font-weight:600;
+    font-size:1rem;
+  }
+  .faq-q .plus{
+    font-family:'JetBrains Mono',monospace;
+    color:var(--blue-light);
+    transition:transform 0.2s ease;
+    font-size:1.2rem;
+  }
+  .faq-item.open .plus{transform:rotate(45deg);}
+  .faq-a{
+    color:var(--muted);
+    font-size:0.92rem;
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.25s ease;
+  }
+  .faq-a-inner{padding-top:14px;}
+  .faq-item.open .faq-a{max-height:300px;}
+
+  /* ===== FINAL CTA ===== */
+  .final-cta{
+    background:linear-gradient(160deg, var(--surface), var(--bg));
+    border-top:1px solid var(--border);
+    text-align:center;
+  }
+  .final-cta h2{
+    font-size:clamp(1.8rem,3.6vw,2.6rem);
+    margin-bottom:18px;
+  }
+  .final-cta p{
+    color:var(--muted);
+    max-width:520px;
+    margin:0 auto 32px;
+    font-size:1.05rem;
+  }
+
+  /* ===== FOOTER ===== */
+  footer{
+    border-top:1px solid var(--border);
+    padding:48px 0 28px;
+  }
+  .footer-grid{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:24px;
+    margin-bottom:32px;
+  }
+  .footer-brand .logo{margin-bottom:10px;}
+  .footer-brand p{color:var(--muted-2); font-size:0.85rem; max-width:280px;}
+  .footer-links{
+    display:flex;
+    gap:48px;
+    flex-wrap:wrap;
+  }
+  .footer-col h5{
+    font-size:0.78rem;
+    color:var(--muted-2);
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    margin-bottom:14px;
+    font-family:'JetBrains Mono',monospace;
+  }
+  .footer-col a{
+    display:block;
+    color:var(--muted);
+    font-size:0.88rem;
+    margin-bottom:10px;
+  }
+  .footer-col a:hover{color:var(--text);}
+  .footer-bottom{
+    display:flex;
+    justify-content:space-between;
+    color:var(--muted-2);
+    font-size:0.8rem;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+
+  /* ===== reveal on scroll ===== */
+  .reveal{
+    opacity:0;
+    transform:translateY(16px);
+    transition:opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible{
+    opacity:1;
+    transform:translateY(0);
+  }
+</style>
+<noscript><style>.reveal{opacity:1 !important; transform:none !important;}</style></noscript>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo"><span class="logo-dot"></span>OriFlows</a>
+    <div class="nav-links nav-mobile-hide">
+      <div class="nav-dropdown">
+        <a href="/dental-clinic-automation/">Solutions ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="/dental-clinic-automation/">Dental Clinic Automation</a>
+          <a href="/dental-lead-generation/">Dental Lead Generation</a>
+          <a href="/ai-receptionist-dental-practice/">AI Receptionist</a>
+          <a href="/missed-call-text-back-dental/">Missed Call Recovery</a>
+          <a href="/dental-patient-follow-up/">Patient Follow-Up</a>
+          <a href="/dental-no-show-automation/">No-Show Automation</a>
+          <a href="/dental-recall-automation/">Patient Recall</a>
+        </div>
+      </div>
+            <div class="nav-dropdown">
+        <a href="/plumbing/">Plumbing ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="/plumbing/">Plumbing Automation</a>
+          <a href="/plumbing-missed-call-recovery/">Missed Call Recovery</a>
+          <a href="/plumbing-lead-follow-up/">Lead Follow-Up</a>
+          <a href="/ai-receptionist-plumbing/">AI Receptionist</a>
+        </div>
+      </div>
+            <div class="nav-dropdown">
+        <a href="/wedding-studio-automation/">Wedding ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="/wedding-studio-automation/">Enquiry &amp; Booking Automation</a>
+          <a href="/wedding-video-editing/">Video Editing Service</a>
+        </div>
+      </div>
+      <a href="#how-it-works">How It Works</a>
+      <a href="/resources/">Resources</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a href="/free-dental-automation-audit/" class="nav-cta nav-mobile-hide">Free Audit</a>
+    <button type="button" class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ===== MOBILE MENU PANEL ===== -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-inner">
+    <div class="mobile-accordion">
+      <button type="button" class="mobile-accordion-head">Solutions <span class="chev">▾</span></button>
+      <div class="mobile-accordion-body">
+        <a href="/dental-clinic-automation/">Dental Clinic Automation</a>
+        <a href="/dental-lead-generation/">Dental Lead Generation</a>
+        <a href="/ai-receptionist-dental-practice/">AI Receptionist</a>
+        <a href="/missed-call-text-back-dental/">Missed Call Recovery</a>
+        <a href="/dental-patient-follow-up/">Patient Follow-Up</a>
+        <a href="/dental-no-show-automation/">No-Show Automation</a>
+        <a href="/dental-recall-automation/">Patient Recall</a>
+      </div>
+    </div>
+    <div class="mobile-accordion">
+      <button type="button" class="mobile-accordion-head">Plumbing <span class="chev">▾</span></button>
+      <div class="mobile-accordion-body">
+        <a href="/plumbing/">Plumbing Automation</a>
+        <a href="/plumbing-missed-call-recovery/">Missed Call Recovery</a>
+        <a href="/plumbing-lead-follow-up/">Lead Follow-Up</a>
+        <a href="/ai-receptionist-plumbing/">AI Receptionist</a>
+      </div>
+    </div>
+    <div class="mobile-accordion">
+      <button type="button" class="mobile-accordion-head">Wedding <span class="chev">▾</span></button>
+      <div class="mobile-accordion-body">
+        <a href="/wedding-studio-automation/">Enquiry &amp; Booking Automation</a>
+        <a href="/wedding-video-editing/">Video Editing Service</a>
+      </div>
+    </div>
+    <a class="mobile-link" href="#how-it-works">How It Works</a>
+    <a class="mobile-link" href="/resources/">Resources</a>
+    <a class="mobile-link" href="#faq">FAQ</a>
+    <a href="/free-dental-automation-audit/" class="nav-cta mobile-cta">Free Audit</a>
+  </div>
+</div>
+
+<style>
+.nav-dropdown{position:relative;}
+.nav-dropdown-menu{
+  position:absolute; top:100%; left:0; margin-top:14px;
+  background:var(--surface-2); border:1px solid var(--border); border-radius:12px;
+  padding:10px; min-width:230px; display:none; flex-direction:column;
+  box-shadow:0 20px 40px -10px rgba(0,0,0,0.5);
+}
+.nav-dropdown:hover .nav-dropdown-menu{display:flex;}
+.nav-dropdown-menu a{padding:9px 12px; border-radius:7px; font-size:0.86rem; color:var(--muted);}
+.nav-dropdown-menu a:hover{background:var(--surface); color:var(--text);}
+
+/* ===== MOBILE HAMBURGER ===== */
+.nav-burger{
+  display:none;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:5px;
+  width:40px;height:40px;
+  background:transparent;
+  border:1px solid var(--border);
+  border-radius:8px;
+  cursor:pointer;
+  flex-shrink:0;
+}
+.nav-burger span{
+  display:block;
+  width:18px;height:2px;
+  background:var(--text);
+  border-radius:2px;
+  transition:transform 0.25s ease, opacity 0.2s ease;
+}
+.nav-burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-burger[aria-expanded="true"] span:nth-child(2){opacity:0;}
+.nav-burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+@media (max-width:760px){
+  .nav-burger{display:flex;}
+}
+
+/* ===== MOBILE MENU PANEL ===== */
+.mobile-menu{
+  position:fixed;
+  top:0; right:0;
+  height:100vh;
+  width:min(84vw, 340px);
+  background:var(--surface);
+  border-left:1px solid var(--border);
+  z-index:99;
+  transform:translateX(100%);
+  transition:transform 0.3s ease;
+  overflow-y:auto;
+  padding-top:76px;
+}
+.mobile-menu.open{transform:translateX(0);}
+.mobile-menu-inner{
+  display:flex;
+  flex-direction:column;
+  padding:16px 20px 40px;
+  gap:4px;
+}
+.mobile-link{
+  padding:14px 4px;
+  border-bottom:1px solid var(--border);
+  font-size:0.98rem;
+  color:var(--text);
+}
+.mobile-accordion{border-bottom:1px solid var(--border);}
+.mobile-accordion-head{
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:none;
+  border:none;
+  color:var(--text);
+  font-size:0.98rem;
+  font-family:inherit;
+  padding:14px 4px;
+  cursor:pointer;
+}
+.mobile-accordion-head .chev{
+  font-family:'JetBrains Mono',monospace;
+  color:var(--blue-light);
+  transition:transform 0.2s ease;
+}
+.mobile-accordion.open .chev{transform:rotate(180deg);}
+.mobile-accordion-body{
+  max-height:0;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  transition:max-height 0.25s ease;
+}
+.mobile-accordion.open .mobile-accordion-body{max-height:400px; padding-bottom:8px;}
+.mobile-accordion-body a{
+  padding:10px 4px 10px 14px;
+  font-size:0.9rem;
+  color:var(--muted);
+}
+.mobile-accordion-body a:hover{color:var(--text);}
+.mobile-cta{
+  margin-top:18px;
+  text-align:center;
+  justify-content:center;
+}
+.mobile-menu-backdrop{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.5);
+  z-index:98;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity 0.3s ease;
+}
+.mobile-menu-backdrop.open{opacity:1; pointer-events:auto;}
+@media (min-width:761px){
+  .mobile-menu, .mobile-menu-backdrop{display:none;}
+}
+</style>
+<div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">● LIVE — done-for-you editing for wedding videographers</div>
+      <h1>Done-For-You Wedding Video Editing</h1>
+      <p class="hero-subhead">Stop letting your edit backlog decide how many weddings you can book.<br><span class="accent">Hand off the edit. Keep the filming.</span></p>
+      <p class="sub">OriFlows runs a managed editing service for wedding videographers — consistent quality, predictable turnaround, and your own style matched every time — so you can take on more weddings without more hours at the desk.</p>
+      <div class="hero-ctas">
+        <a href="/book.html" class="btn-primary">Book my free workflow call →</a>
+        <a href="#process-editing" class="btn-secondary">See how delivery works →</a>
+      </div>
+      <p class="hero-microcopy">No contract lock-in · Clear turnaround times · Your style, matched</p>
+    </div>
+
+    <div class="demo-card">
+      <div class="demo-header">
+        <div class="demo-header-left">
+          <span style="width:7px;height:7px;border-radius:50%;background:var(--green);display:inline-block;"></span>
+          oriflows-editing · project tracker
+        </div>
+        <div class="demo-dots"><span></span><span></span><span></span></div>
+      </div>
+      <div class="demo-body">
+        <div class="demo-event visible" style="opacity:1;">
+          <div class="demo-icon missed">📤</div>
+          <div class="demo-text"><span class="label">Footage uploaded</span><span class="meta">Mon — Aisha &amp; Tom wedding, 4 cards</span></div>
+        </div>
+        <div class="demo-event visible" style="opacity:1;">
+          <div class="demo-icon sent">✂️</div>
+          <div class="demo-text"><span class="label">Rough cut in progress</span><span class="meta">Wed — editor assigned, style reference locked</span></div>
+        </div>
+        <div class="demo-event visible" style="opacity:1;">
+          <div class="demo-icon reply">👀</div>
+          <div class="demo-text"><span class="label">First cut delivered for review</span><span class="meta">Fri — link sent, notes open</span>
+            <div class="demo-bubble">This looks great — can we bring the ceremony audio up slightly in the first minute?</div>
+          </div>
+        </div>
+        <div class="demo-event visible" style="opacity:1;">
+          <div class="demo-icon booked">✓</div>
+          <div class="demo-text"><span class="label">Final files delivered</span><span class="meta">Mon — on schedule, ready to send to the couple</span></div>
+        </div>
+      </div>
+      <div class="demo-footer">
+        <span class="stat">⏱ agreed turnaround: on schedule</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== TRUST BAR ===== -->
+<section class="trust-bar">
+  <div class="wrap trust-bar-inner">
+    <div class="trust-item"><span class="trust-icon">🎬</span>Your style, matched every time</div>
+    <div class="trust-item"><span class="trust-icon">🗓️</span>Turnaround agreed upfront</div>
+    <div class="trust-item"><span class="trust-icon">🔒</span>Secure footage handling</div>
+    <div class="trust-item"><span class="trust-icon">🚫</span>No lock-in contract</div>
+    <div class="trust-item"><span class="trust-icon">✅</span>Revision round included</div>
+  </div>
+</section>
+
+<!-- ===== PROBLEM ===== -->
+<section class="problem" id="problem">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-tag">// THE REALITY</span>
+      <h2>Your camera time is worth more than your edit-suite time</h2>
+      <p>Every hour spent editing is an hour you can't spend filming, meeting couples, or growing the studio — and a growing backlog quietly caps how many weddings you can take on.</p>
+    </div>
+
+    <div class="pain-mirror reveal">
+      <h4>Sound familiar?</h4>
+      <div class="pain-list">
+        <div class="pain-item"><span class="x">×</span> You're editing footage from a wedding three months ago while filming this weekend's.</div>
+        <div class="pain-item"><span class="x">×</span> Couples are chasing you for delivery dates you can't confidently give.</div>
+        <div class="pain-item"><span class="x">×</span> Late nights at the desk are eating into family time and burning you out.</div>
+        <div class="pain-item"><span class="x">×</span> You've turned down bookings because you know you can't edit the backlog you already have.</div>
+        <div class="pain-item"><span class="x">×</span> Hiring and training an in-house editor feels like a bigger commitment than you're ready for.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BEFORE / AFTER ===== -->
+<section id="before-after">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-tag">// BEFORE &amp; AFTER</span>
+      <h2>Same style, same standards — just off your desk</h2>
+      <p>OriFlows doesn't change how your films look or feel. It takes the editing workload off your plate with a process built to match your existing style.</p>
+    </div>
+    <div class="compare-grid reveal">
+      <div class="compare-row compare-head">
+        <div class="compare-before">Before OriFlows</div>
+        <div class="compare-after">After OriFlows</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-before"><span class="x">×</span> Editing backlog grows every wedding season</div>
+        <div class="compare-after"><span class="check">✓</span> Footage moves through a managed pipeline with an agreed turnaround</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-before"><span class="x">×</span> Delivery dates are a guess, not a promise</div>
+        <div class="compare-after"><span class="check">✓</span> A project tracker shows exactly where each edit stands</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-before"><span class="x">×</span> You turn down bookings you don't have time to edit</div>
+        <div class="compare-after"><span class="check">✓</span> You can take on more weddings without adding desk hours</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-before"><span class="x">×</span> Style consistency depends on how tired you are that night</div>
+        <div class="compare-after"><span class="check">✓</span> Every edit starts from your own style reference, with a revision round built in</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-tag">// WHAT'S INCLUDED</span>
+      <h2>A managed editing pipeline, not a freelancer gamble</h2>
+      <p>Every project runs through the same tracked process, so quality and delivery timing don't depend on which editor happened to be free.</p>
+    </div>
+
+    <div class="services-grid reveal">
+      <div class="service-card">
+        <div class="tag-row"><div class="service-icon">🎞️</div></div>
+        <h3>Full Edit From Raw Footage</h3>
+        <p>Highlight films, ceremony edits, and full-length features — cut, colour graded, and scored to match your studio's existing style.</p>
+        <div class="result-line"><span class="arrow">→</span> Consistent quality without you at the desk</div>
+      </div>
+
+      <div class="service-card featured">
+        <div class="tag-row"><div class="service-icon">📊</div><span class="new-badge">TRACKED</span></div>
+        <h3>Project Tracker &amp; Turnaround</h3>
+        <p>Every project has an agreed delivery date and a live status you can check — no more guessing when an edit will land.</p>
+        <div class="result-line"><span class="arrow">→</span> Confident delivery dates for your couples</div>
+      </div>
+
+      <div class="service-card">
+        <div class="tag-row"><div class="service-icon">🔁</div></div>
+        <h3>Revision Round Included</h3>
+        <p>A structured feedback round makes sure the final cut fits your brand before it goes anywhere near the couple.</p>
+        <div class="result-line"><span class="arrow">→</span> Your name stays on work you're proud of</div>
+      </div>
+    </div>
+    <p class="reveal" style="margin-top:28px; text-align:center;">
+      <a href="/wedding-studio-automation/" style="color:var(--blue-light); font-size:0.92rem;">Also want to automate enquiry response and booking? See our automation service →</a>
+    </p>
+  </div>
+</section>
+
+<!-- ===== PROCESS ===== -->
+<section id="process-editing">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-tag">// HOW DELIVERY WORKS</span>
+      <h2>From raw footage to final files</h2>
+    </div>
+    <div class="process-list reveal">
+      <div class="process-item">
+        <div class="process-marker"><span class="process-icon">📋</span><span class="process-line"></span></div>
+        <div>
+          <span class="process-num">01</span>
+          <h4>Free workflow call</h4>
+          <p>We look at your current editing workload, style, and delivery expectations, and agree on a turnaround that actually fits your season.</p>
+          <span class="when">~20 MINUTES</span>
+        </div>
+      </div>
+      <div class="process-item">
+        <div class="process-marker"><span class="process-icon">📤</span><span class="process-line"></span></div>
+        <div>
+          <span class="process-num">02</span>
+          <h4>Footage uploaded, editor assigned</h4>
+          <p>You upload raw footage and any notes through a simple link. An editor is briefed on your style before cutting begins.</p>
+          <span class="when">SAME WEEK</span>
+        </div>
+      </div>
+      <div class="process-item">
+        <div class="process-marker"><span class="process-icon">👀</span><span class="process-line"></span></div>
+        <div>
+          <span class="process-num">03</span>
+          <h4>First cut delivered for review</h4>
+          <p>You review the first cut and leave notes through the tracker. One structured revision round is included as standard.</p>
+          <span class="when">AS AGREED</span>
+        </div>
+      </div>
+      <div class="process-item">
+        <div class="process-marker"><span class="process-icon">✅</span></div>
+        <div>
+          <span class="process-num">04</span>
+          <h4>Final files delivered</h4>
+          <p>Final, graded files are delivered on schedule, ready for you to send straight to the couple.</p>
+          <span class="when">ON SCHEDULE</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOUNDER ===== -->
+<section class="founder">
+  <div class="wrap" style="max-width:760px;">
+    <div class="section-head reveal">
+      <span class="section-tag">// WHO'S BEHIND THIS</span>
+      <h2>You're working directly with the person who runs it</h2>
+    </div>
+    <div class="founder-card reveal">
+      <img class="founder-avatar" src="/assets/tazul-islam-founder.jpg" alt="Tazul Islam, Founder of OriFlows, in a business suit in a modern office" width="88" height="88" loading="lazy">
+      <div class="founder-bio">
+        <h4>Tazul Islam, Founder of OriFlows</h4>
+        <p>I manage the editing pipeline and project tracking myself — no faceless outsourcing queue. When a project needs a specific touch, you're talking to the person who's actually watching it move through.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq">
+  <div class="wrap" style="max-width:760px;">
+    <div class="section-head reveal">
+      <span class="section-tag">// QUESTIONS</span>
+      <h2>Before you book the call</h2>
+    </div>
+    <div class="reveal">
+      <div class="faq-item">
+        <div class="faq-q">What footage do you need from me? <span class="plus">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Your raw footage, any shot notes or must-have moments, and a reference to your existing edit style — we match it, not replace it.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How long does a typical edit take? <span class="plus">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Turnaround depends on package and footage volume, but timelines are agreed upfront and tracked, so you always know when to expect delivery.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Will the edit match my studio's style? <span class="plus">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Yes. We start from your existing work as a style reference and go through a revision round to make sure it fits your brand before final delivery.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is there a contract? <span class="plus">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">No lock-in contract. You can send one wedding or a season's worth, and stop any time.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How do I send footage and get files back? <span class="plus">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Through a simple upload link and project tracker — no new complicated software to learn on your end.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CROSS-SELL ===== -->
+<section id="automation-crosssell" style="padding:56px 0; border-top:1px solid var(--border); background:var(--surface);">
+  <div class="wrap reveal" style="display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;">
+    <div style="max-width:560px;">
+      <span class="section-tag">// ALSO AVAILABLE</span>
+      <p style="font-size:1.05rem; color:var(--text); margin-top:6px;">We also automate enquiry response and booking for wedding videographers, so more of those enquiries turn into weddings on your calendar.</p>
+    </div>
+    <a href="/wedding-studio-automation/" class="btn-secondary">Explore Enquiry &amp; Booking Automation →</a>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="final-cta">
+  <div class="wrap">
+    <div class="reveal">
+      <h2>Find out what a cleared backlog would let you take on</h2>
+      <p>20 minutes. No obligation. We'll look at your current workflow and give you a realistic turnaround, not a sales pitch.</p>
+      <a href="/book.html" class="btn-primary">Book your free workflow call →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><span class="logo-dot"></span>OriFlows</div>
+        <p>Automation infrastructure for UK private dental practices.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h5>Solutions</h5>
+          <a href="/dental-clinic-automation/">Dental Clinic Automation</a>
+          <a href="/dental-lead-generation/">Lead Generation</a>
+          <a href="/ai-receptionist-dental-practice/">AI Receptionist</a>
+          <a href="/missed-call-text-back-dental/">Missed Call Recovery</a>
+          <a href="/dental-patient-follow-up/">Patient Follow-Up</a>
+          <a href="/dental-no-show-automation/">No-Show Automation</a>
+          <a href="/dental-recall-automation/">Patient Recall</a>
+        </div>
+        <div class="footer-col">
+          <h5>Site</h5>
+          <a href="/resources/">Resources</a>
+          <a href="/free-dental-automation-audit/">Free Audit</a>
+          <a href="/privacy.html">Privacy Policy</a>
+          <a href="/terms.html">Terms &amp; Conditions</a>
+          <a href="/cookies.html">Cookie Policy</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <a href="mailto:tazul@oriflows.com">tazul@oriflows.com</a>
+        </div>
+      </div>
+    </div>
+    <hr class="divider" style="margin-bottom:24px;">
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> OriFlows. All rights reserved.</span>
+      <span>Built for UK private dental practices.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Mobile hamburger menu
+(function(){
+  const burger = document.getElementById('navBurger');
+  const menu = document.getElementById('mobileMenu');
+  const backdrop = document.getElementById('mobileMenuBackdrop');
+  if(!burger || !menu || !backdrop) return;
+
+  function closeMenu(){
+    menu.classList.remove('open');
+    backdrop.classList.remove('open');
+    burger.setAttribute('aria-expanded','false');
+    document.body.style.overflow = '';
+  }
+  function openMenu(){
+    menu.classList.add('open');
+    backdrop.classList.add('open');
+    burger.setAttribute('aria-expanded','true');
+    document.body.style.overflow = 'hidden';
+  }
+  burger.addEventListener('click', function(){
+    const isOpen = menu.classList.contains('open');
+    isOpen ? closeMenu() : openMenu();
+  });
+  backdrop.addEventListener('click', closeMenu);
+  menu.querySelectorAll('.mobile-link').forEach(a => a.addEventListener('click', closeMenu));
+
+  menu.querySelectorAll('.mobile-accordion-head').forEach(head => {
+    head.addEventListener('click', function(){
+      const item = head.closest('.mobile-accordion');
+      const isOpen = item.classList.contains('open');
+      menu.querySelectorAll('.mobile-accordion.open').forEach(i => i.classList.remove('open'));
+      if(!isOpen) item.classList.add('open');
+    });
+  });
+})();
+
+// Demo video — click-to-load embed (keeps the video from ever autoplaying with sound)
+(function(){
+  const frame = document.getElementById('demoVideoFrame');
+  const btn = document.getElementById('playDemoVideo');
+  if(!frame || !btn) return;
+  btn.addEventListener('click', function(){
+    const src = frame.getAttribute('data-video-src');
+    if(!src || src === 'VIDEO_EMBED_URL_HERE'){
+      alert('Demo video coming soon — add your embed URL in index.html (search for VIDEO_EMBED_URL_HERE).');
+      return;
+    }
+    const iframe = document.createElement('iframe');
+    iframe.src = src + (src.indexOf('?') > -1 ? '&' : '?') + 'autoplay=1';
+    iframe.title = 'OriFlows automation demo video';
+    iframe.loading = 'lazy';
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen';
+    iframe.allowFullscreen = true;
+    frame.innerHTML = '';
+    frame.appendChild(iframe);
+  });
+})();
+
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+},{threshold:0.12});
+reveals.forEach(el=>io.observe(el));
+
+// FAQ accordion
+document.querySelectorAll('.faq-item').forEach(item=>{
+  item.querySelector('.faq-q').addEventListener('click',()=>{
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+    if(!isOpen) item.classList.add('open');
+  });
+});
+
+</script>
+<script src="/widget.js"></script>
+</body>
+</html>
