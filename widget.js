@@ -22,21 +22,15 @@
   const LEAD_PROMPT_AFTER_USER_MESSAGES = 3; // show inline lead form after this many user turns
   const STORAGE_KEY = "of_chat_state_v2";
 
-  // Detects which service section the visitor is currently on, based on the
-  // URL path, so the backend always knows the current context — even if the
-  // conversation drifts to a generic question like "we keep missing calls".
+  // Detect which service page the widget is loaded on, from the URL path.
+  // Sent with every message so the backend never has to guess from
+  // conversation history alone (history drifts once the topic changes).
   function detectPageContext() {
-    const path = (window.location.pathname || "").toLowerCase();
-    if (path.includes("wedding")) return "wedding";
-    if (path.includes("plumbing") || path.includes("ai-receptionist-plumbing")) return "plumbing";
-    if (
-      path.includes("dental") ||
-      path === "/" ||
-      path.includes("ai-receptionist-dental-practice") ||
-      path.includes("missed-call-text-back-dental") ||
-      path.includes("free-dental-automation-audit")
-    )
-      return "dental";
+    const path = window.location.pathname.toLowerCase();
+    if (path.includes("dental")) return "dental";
+    if (path.includes("plumbing")) return "plumbing";
+    if (path.includes("wedding-video-editing")) return "wedding_editing";
+    if (path.includes("wedding")) return "wedding_booking";
     return "general";
   }
 
@@ -104,7 +98,7 @@
         const res = await fetch(WORKER_URL, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ messages: state.conversation, hp: honeypotValue(), page: PAGE_CONTEXT }),
+          body: JSON.stringify({ messages: state.conversation, page: PAGE_CONTEXT, hp: honeypotValue() }),
         });
 
         typingEl.remove();
@@ -197,7 +191,7 @@
         const res = await fetch(WORKER_URL, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ messages: state.conversation, hp: honeypotValue(), page: PAGE_CONTEXT }),
+          body: JSON.stringify({ messages: state.conversation, page: PAGE_CONTEXT, hp: honeypotValue() }),
         });
         typingEl.remove();
         const data = await res.json();
