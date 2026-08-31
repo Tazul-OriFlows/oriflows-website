@@ -128,7 +128,7 @@
       <p>20 minutes, no obligation. Built for UK plumbing businesses. We'll look at your current call handling and lead follow-up, and show you exactly where jobs are slipping through.</p>
     </div>
 
-    <form id="plumbingBookForm">
+    <form id="plumbingBookForm" action="https://formspree.io/f/moeqjjkd" method="POST">
       <label>Full name
         <input type="text" id="fullName" name="fullName" placeholder="Dave Coleman" required>
       </label>
@@ -191,14 +191,26 @@
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// NOTE FOR TAZUL: this currently just shows a client-side success message.
-// Replace this handler with your real submission endpoint — e.g. a GoHighLevel
-// form action/webhook or an n8n webhook URL — the same way book.html submits leads.
+// Submits to Formspree (https://formspree.io/f/moeqjjkd) via fetch,
+// so the page doesn't redirect away and the success message shows in place.
 document.getElementById('plumbingBookForm').addEventListener('submit', function(e){
   e.preventDefault();
-  // TODO: send form data to your GoHighLevel / n8n webhook here.
-  this.style.display = 'none';
-  document.getElementById('successBox').classList.add('show');
+  const form = this;
+  const data = new FormData(form);
+  fetch(form.action, {
+    method: 'POST',
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  }).then(response => {
+    if(response.ok){
+      form.style.display = 'none';
+      document.getElementById('successBox').classList.add('show');
+    } else {
+      alert('Something went wrong sending your details — please try again or email tazul@oriflows.com directly.');
+    }
+  }).catch(() => {
+    alert('Something went wrong sending your details — please try again or email tazul@oriflows.com directly.');
+  });
 });
 </script>
 </body>
