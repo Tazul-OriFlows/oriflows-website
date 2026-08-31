@@ -22,6 +22,26 @@
   const LEAD_PROMPT_AFTER_USER_MESSAGES = 3; // show inline lead form after this many user turns
   const STORAGE_KEY = "of_chat_state_v2";
 
+  // Detects which service section the visitor is currently on, based on the
+  // URL path, so the backend always knows the current context — even if the
+  // conversation drifts to a generic question like "we keep missing calls".
+  function detectPageContext() {
+    const path = (window.location.pathname || "").toLowerCase();
+    if (path.includes("wedding")) return "wedding";
+    if (path.includes("plumbing") || path.includes("ai-receptionist-plumbing")) return "plumbing";
+    if (
+      path.includes("dental") ||
+      path === "/" ||
+      path.includes("ai-receptionist-dental-practice") ||
+      path.includes("missed-call-text-back-dental") ||
+      path.includes("free-dental-automation-audit")
+    )
+      return "dental";
+    return "general";
+  }
+
+  const PAGE_CONTEXT = detectPageContext();
+
   let state = loadState();
 
   function loadState() {
@@ -84,7 +104,7 @@
         const res = await fetch(WORKER_URL, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ messages: state.conversation, hp: honeypotValue() }),
+          body: JSON.stringify({ messages: state.conversation, hp: honeypotValue(), page: PAGE_CONTEXT }),
         });
 
         typingEl.remove();
@@ -177,7 +197,7 @@
         const res = await fetch(WORKER_URL, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ messages: state.conversation, hp: honeypotValue() }),
+          body: JSON.stringify({ messages: state.conversation, hp: honeypotValue(), page: PAGE_CONTEXT }),
         });
         typingEl.remove();
         const data = await res.json();
