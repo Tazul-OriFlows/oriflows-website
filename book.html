@@ -482,8 +482,6 @@ auditForm.addEventListener('submit', async function(e){
 
   try {
     const formData = new FormData(auditForm);
-
-    // n8n webhook — fire-and-forget, ফেইল হলেও Formspree/Cal.com আটকাবে না
     const n8nPayload = {
       name: formData.get('name'),
       practice: formData.get('practice'),
@@ -492,7 +490,7 @@ auditForm.addEventListener('submit', async function(e){
       size: formData.get('size'),
       challenge: formData.get('challenge')
     };
-    fetch('https://n8n.scalewithaibd.com/webhook-test/aa32c817-7092-4603-9151-b610fc915bf5', {
+    fetch('https://n8n.scalewithaibd.com/webhook/aa32c817-7092-4603-9151-b610fc915bf5', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(n8nPayload)
